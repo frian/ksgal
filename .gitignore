@@ -21,3 +21,5 @@
 !/web/images
 /web/images/*
 
+web/.sass-cache/
+

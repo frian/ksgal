@@ -8,6 +8,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\GalleryItem;
 use AppBundle\Form\GalleryItemType;
+use Symfony\Component\HttpFoundation\File\File;
+
 
 /**
  * GalleryItem controller.
@@ -123,10 +125,25 @@ class GalleryItemController extends Controller
     public function editAction(Request $request, GalleryItem $galleryItem)
     {
         $deleteForm = $this->createDeleteForm($galleryItem);
+        
+		// save current images ( needed if the images do not change )
+        $currentImage = $galleryItem->getImage();
+        $currentBgimage = $galleryItem->getBgimage();
+        
         $editForm = $this->createForm('AppBundle\Form\GalleryItemType', $galleryItem);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+        	
+			// if images has not changes set old image
+        	if ( $editForm->get('image')->getData() == null ) {
+        		$galleryItem->setImage($currentImage);
+        	}
+        	
+        	if ( $editForm->get('bgimage')->getData() == null ) {
+        		$galleryItem->setBgimage($currentBgimage);
+        	}
+        	
             $em = $this->getDoctrine()->getManager();
             $em->persist($galleryItem);
             $em->flush();

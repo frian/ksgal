@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
     <h1>GalleryItem edit</h1>
 
     {{ form_start(edit_form) }}
@@ -29,13 +30,13 @@
 {{ form_label(edit_form.image) }}
 {{ form_errors(edit_form.image) }}
 {{ form_widget(edit_form.image) }}
-		<img src="{{ imgPath }}{{ edit_form.vars.value.gallery }}/{{ edit_form.vars.value.image }}" />
+		<img class="admin" src="{{ imgPath }}{{ edit_form.vars.value.gallery }}/{{ edit_form.vars.value.image }}" />
 	</div>
 	<div>
 {{ form_label(edit_form.bgimage) }}
 {{ form_errors(edit_form.bgimage) }}
 {{ form_widget(edit_form.bgimage) }}
-		<img src="{{ imgPath }}{{ edit_form.vars.value.gallery }}/{{ edit_form.vars.value.bgimage }}" />
+		<img class="admin" src="{{ imgPath }}{{ edit_form.vars.value.gallery }}/{{ edit_form.vars.value.bgimage }}" />
 	</div>
 	
 	

@@ -1,48 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>GalleryItem</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ galleryItem.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ galleryItem.name }}</td>
-            </tr>
-            <tr>
-                <th>Dimensions</th>
-                <td>{{ galleryItem.dimensions }}</td>
-            </tr>
-            <tr>
-                <th>Techniques</th>
-                <td>{{ galleryItem.techniques }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ galleryItem.image }}</td>
-            </tr>
-            <tr>
-                <th>Bgimage</th>
-                <td>{{ galleryItem.bgimage }}</td>
-            </tr>
-        </tbody>
-    </table>
+<img  id="bg" src="/images/{{ galleryItem.gallery }}/{{ galleryItem.bgImage }}" >
 
-    <ul>
-        <li>
-            <a href="{{ path('galleryitem_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('galleryitem_edit', { 'id': galleryItem.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+<header>
+	<span class="serie">{{ galleryItem.gallery }}</span><span class="name">{{ galleryItem.name }}</span> 
+</header>
+
+<div class="table text-center">
+	<div class="tableCell vertMiddle">
+
+		<div id="imageWrapper">
+			<img src="/images/{{ galleryItem.gallery }}/{{ galleryItem.image }}">
+		</div>
+
+	</div>
+</div>
+
+<footer>
+	{{ galleryItem.dimensions }} / {{ galleryItem.techniques }}
+</footer>
 {% endblock %}

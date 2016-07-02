@@ -339,3 +339,8 @@ footer {
   color: #ccc;
   z-index: 50;
 }
+
+/* line 274, ../sass/screen.scss */
+img.admin {
+  width: 200px !important;
+}

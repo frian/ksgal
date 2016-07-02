@@ -21,10 +21,12 @@ class GalleryItemType extends AbstractType
             ->add('dimensions')
             ->add('techniques')
             ->add('image', FileType::class, array(
-                'data_class' => null
+                'data_class' => null,
+            	'required' => false
             ))
             ->add('bgimage', FileType::class, array(
-                'data_class' => null
+                'data_class' => null,
+            	'required' => false
             ))
             ->add('gallery', EntityType::class, array(
             		// query choices from this entity
