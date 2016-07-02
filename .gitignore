@@ -17,3 +17,7 @@
 .buildpath
 .project
 .settings/
+
+!/web/images
+/web/images/*
+

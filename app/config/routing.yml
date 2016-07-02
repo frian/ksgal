@@ -1,3 +1,20 @@
+app_gallery_item:
+    resource: "@AppBundle/Controller/GalleryItemController.php"
+    type:     annotation
+
+app_gallery_item:
+    resource: "@AppBundle/Controller/GalleryItemController.php"
+    type:     annotation
+
+app_gallery:
+    resource: "@AppBundle/Controller/GalleryController.php"
+    type:     annotation
+
+kgal:
+    resource: "@KgalBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

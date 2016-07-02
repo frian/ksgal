@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>GalleryItem list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Dimensions</th>
+                <th>Techniques</th>
+                <th>Image</th>
+                <th>Bgimage</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for galleryItem in galleryItems %}
+            <tr>
+                <td><a href="{{ path('galleryitem_show', { 'id': galleryItem.id }) }}">{{ galleryItem.id }}</a></td>
+                <td>{{ galleryItem.name }}</td>
+                <td>{{ galleryItem.dimensions }}</td>
+                <td>{{ galleryItem.techniques }}</td>
+                <td>{{ galleryItem.image }}</td>
+                <td>{{ galleryItem.bgimage }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('galleryitem_show', { 'id': galleryItem.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('galleryitem_edit', { 'id': galleryItem.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('galleryitem_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

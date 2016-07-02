@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>GalleryItem edit</h1>
+
+    {{ form_start(edit_form) }}
+
+	<div>
+{{ form_label(edit_form.name) }}
+{{ form_errors(edit_form.name) }}
+{{ form_widget(edit_form.name) }}
+	</div>
+	<div>
+{{ form_label(edit_form.dimensions) }}
+{{ form_errors(edit_form.dimensions) }}
+{{ form_widget(edit_form.dimensions) }}
+	</div>
+	<div>
+{{ form_label(edit_form.techniques) }}
+{{ form_errors(edit_form.techniques) }}
+{{ form_widget(edit_form.techniques) }}
+	</div>
+	<div>
+{{ form_label(edit_form.gallery) }}
+{{ form_errors(edit_form.gallery) }}
+{{ form_widget(edit_form.gallery) }}
+	</div>
+	<div>
+{{ form_label(edit_form.image) }}
+{{ form_errors(edit_form.image) }}
+{{ form_widget(edit_form.image) }}
+		<img src="{{ imgPath }}{{ edit_form.vars.value.gallery }}/{{ edit_form.vars.value.image }}" />
+	</div>
+	<div>
+{{ form_label(edit_form.bgimage) }}
+{{ form_errors(edit_form.bgimage) }}
+{{ form_widget(edit_form.bgimage) }}
+		<img src="{{ imgPath }}{{ edit_form.vars.value.gallery }}/{{ edit_form.vars.value.bgimage }}" />
+	</div>
+	
+	
+	
+	
+        {{ form_widget(edit_form) }}
+
+        <input type="submit" value="Edit" />
+    
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('galleryitem_index') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
