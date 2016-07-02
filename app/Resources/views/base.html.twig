@@ -1,13 +1,29 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claudia Di Paolo's art gallery</title>
+    
+    <link rel="stylesheet" href="/css/foundation.min.css">
+{#     <link rel="stylesheet" href="/css/fontello-embedded.min.css">#}
+    
+    {% block css %}{% endblock %}
+    
+    <link rel="stylesheet" href="/css/screen.css">
+  </head>
+  <body>
+
+
+	{% block content %}{% endblock %}
+
+    <script src="/js/jquery-1.12.4.min.js"></script>
+    <script src="/js/script.js"></script>
+{#     <script src="js/vendor/what-input.js"></script>#}
+{#     <script src="js/vendor/foundation.js"></script>#}
+    
+    {% block js %}{% endblock %}
+    
+  </body>
 </html>

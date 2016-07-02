@@ -1,0 +1,341 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* atinfo base scss */
+/* COMPASS IMPORTS */
+@import url(https://fonts.googleapis.com/css?family=Arizonia|Bilbo|Inconsolata|Lato:300,400,700,900);
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script:400,700);
+/* line 5, ../../../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* OWN MIXINS */
+/* Simple animation with named arguments */
+/* line 15, ../sass/screen.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 17, ../sass/screen.scss */
+body {
+  color: #eee;
+  background-color: #111;
+  /* 	@include my-background-image( */
+  /* 	    linear-gradient( */
+  /* 	      top left,  */
+  /* 		    rgba(50,50,50,1), */
+  /* 	        rgba( 25, 25, 25, 1) */
+  /* 	    ) */
+  /* 	  ); */
+  overflow: hidden;
+}
+
+/* line 30, ../sass/screen.scss */
+.table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 31, ../sass/screen.scss */
+.tableCell {
+  display: table-cell;
+}
+
+/* line 32, ../sass/screen.scss */
+.vertMiddle {
+  vertical-align: middle;
+}
+
+/* line 37, ../sass/screen.scss */
+.indexContainer {
+  position: relative;
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  /* 	@include debug(red); */
+}
+
+/* line 49, ../sass/screen.scss */
+.vericalText {
+  width: 1px;
+  word-wrap: break-word;
+  font-family: monospace;
+  /* this is just for good looks */
+}
+
+/* line 57, ../sass/screen.scss */
+.k {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 80%;
+  font-size: 300px;
+  font-family: 'Bilbo', cursive;
+  /* 	@include debug(yellow); */
+}
+
+/* line 69, ../sass/screen.scss */
+.k1 {
+  position: absolute;
+  top: 10px;
+  font-weight: bold;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  font-size: 96px;
+  /* 	font-family: 'Bilbo', cursive; */
+  font-family: 'Dancing Script', cursive;
+  /*  	@include debug(yellow);  */
+}
+
+/* line 83, ../sass/screen.scss */
+.k2 {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  font-size: 90px;
+  /* 	font-family: 'Bilbo', cursive; */
+  font-family: 'Dancing Script', cursive;
+  /*  	@include debug(yellow);  */
+}
+
+/* line 98, ../sass/screen.scss */
+.test1 {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  font-size: 100px;
+  font-family: 'Bilbo', cursive;
+}
+
+/* line 106, ../sass/screen.scss */
+.test2 {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 100px;
+  font-family: 'Bilbo', cursive;
+}
+
+/* line 115, ../sass/screen.scss */
+.art {
+  position: absolute;
+  right: 20%;
+  font-size: 30px;
+  font-family: 'Lato', sans-serif;
+}
+
+/* line 118, ../sass/screen.scss */
+.gallery {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  font-family: 'Lato', sans-serif;
+  font-size: 60px;
+  font-weight: 300;
+}
+
+/* line 130, ../sass/screen.scss */
+.galleryGradient {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  /* 	background : rgba( 255,255,255, .4 ); */
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzExMTExMSIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxMTExMTEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(17, 17, 17, 0)), color-stop(100%, #111111));
+  background-image: -moz-linear-gradient(top, rgba(17, 17, 17, 0), #111111);
+  background-image: -webkit-linear-gradient(top, rgba(17, 17, 17, 0), #111111);
+  background-image: linear-gradient(to bottom, rgba(17, 17, 17, 0), #111111);
+  background-image: -ms-linear-gradient(to bottom, rgba(17, 17, 17, 0), #111111);
+  z-index: 10;
+}
+
+/* .relative { position : relative } */
+/* line 149, ../sass/screen.scss */
+.absolute {
+  position: absolute;
+}
+
+/* line 152, ../sass/screen.scss */
+#imageWrapper {
+  color: black;
+  position: relative;
+  margin: auto;
+  width: 400px;
+  z-index: 100;
+  /* 	background : rgba(0,0,0, .8); */
+  padding-bottom: 10px;
+  /* 	box-shadow: 100px 100px 100px rgba(0, 0, 0, 1), -100px -100px 100px rgba(0, 0, 0, 1); */
+  /* 	@include box-shadow( */
+  /* 		100px 100px 100px 0 rgba(0, 0, 0, 1), */
+  /* 		-100px 100px 100px 0 rgba(0, 0, 0, 1), */
+  /* 		100px -100px 100px 0 rgba(0, 0, 0, 1), */
+  /* 		-100px -100px 100px 0 rgba(0, 0, 0, 1) */
+  /* 	); */
+}
+
+/* line 176, ../sass/screen.scss */
+img {
+  -moz-box-shadow: 0px 0px 5px #333333;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+}
+
+/* line 187, ../sass/screen.scss */
+table tbody, table tfoot, table thead, table tbody tr:nth-child(2n) {
+  background: none;
+  border: none;
+  font-family: 'Lato', sans-serif;
+}
+
+/* td { @include debug(red) } */
+/* line 195, ../sass/screen.scss */
+td.title {
+  line-height: 50px;
+  font-size: 230%;
+  font-weight: 400;
+}
+
+/* line 202, ../sass/screen.scss */
+td.desc {
+  line-height: 15px;
+  font-size: 120%;
+  font-weight: 400;
+}
+
+/* line 209, ../sass/screen.scss */
+#bg {
+  position: absolute;
+  /* 	top : 0; */
+  /* 	left : 0; */
+  max-width: none;
+  z-index: 10;
+}
+
+/* line 217, ../sass/screen.scss */
+#bgTmp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  z-index: 0;
+}
+
+/* line 227, ../sass/screen.scss */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: rgba(0, 0, 0, 0.8);
+  font-family: 'Lato', sans-serif;
+  z-index: 50;
+}
+
+/* line 239, ../sass/screen.scss */
+span.serie {
+  font-size: 150%;
+  font-weight: 300;
+  padding: 0 10px;
+  font-family: 'Lato', sans-serif;
+  color: #ccc;
+}
+
+/* line 248, ../sass/screen.scss */
+span.name {
+  font-size: 180%;
+  font-weight: 300;
+  padding: 0 10px;
+  font-family: 'Lato', sans-serif;
+  color: #ddd;
+}
+
+/* line 257, ../sass/screen.scss */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 100%;
+  font-weight: 400;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  color: #ccc;
+  z-index: 50;
+}
