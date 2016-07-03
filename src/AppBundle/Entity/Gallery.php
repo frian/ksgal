@@ -37,6 +37,18 @@ class Gallery
 
 
     /**
+     * @ORM\OneToMany(targetEntity="GalleryItem", mappedBy="gallery")
+     */
+    private $galleryItems;
+    
+
+    public function __construct()
+    {
+    	$this->galleryItems = new ArrayCollection();
+    }
+    
+    
+    /**
      * stringify
      *
      * @return string
@@ -103,5 +115,38 @@ class Gallery
     {
         return $this->description;
     }
-}
 
+    /**
+     * Add galleryItem
+     *
+     * @param \AppBundle\Entity\GalleryItem $galleryItem
+     *
+     * @return Gallery
+     */
+    public function addGalleryItem(\AppBundle\Entity\GalleryItem $galleryItem)
+    {
+        $this->galleryItems[] = $galleryItem;
+
+        return $this;
+    }
+
+    /**
+     * Remove galleryItem
+     *
+     * @param \AppBundle\Entity\GalleryItem $galleryItem
+     */
+    public function removeGalleryItem(\AppBundle\Entity\GalleryItem $galleryItem)
+    {
+        $this->galleryItems->removeElement($galleryItem);
+    }
+
+    /**
+     * Get galleryItems
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGalleryItems()
+    {
+        return $this->galleryItems;
+    }
+}

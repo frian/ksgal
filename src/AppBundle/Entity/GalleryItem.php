@@ -62,7 +62,7 @@ class GalleryItem
      *
      * @var TimeTM\CoreBundle\Entity\User
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Gallery", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Gallery", inversedBy="galleryItems", cascade={"persist"})
      */
     private $gallery;
 

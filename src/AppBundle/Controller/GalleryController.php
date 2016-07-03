@@ -146,4 +146,27 @@ class GalleryController extends Controller
             ->getForm()
         ;
     }
+
+
+    /**
+     * Finds and displays a Gallery content.
+     *
+     * @Route("/show/{name}", name="gallery_show")
+     * @Method("GET")
+     */
+    public function showGalleryAction($name)
+    {
+    
+    	$gallery = $this->getDoctrine()
+	    	->getRepository('AppBundle:Gallery')
+	    	->findOneByName($name);
+    	
+	   	$galleryItems = $gallery->getGalleryItems();
+	    	
+    	return $this->render('gallery/showContent.html.twig', array(
+    		'name' => $name,
+    		'galleryItems' => $galleryItems
+    	));
+    }
+
 }

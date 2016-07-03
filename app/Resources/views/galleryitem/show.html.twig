@@ -9,6 +9,9 @@
 <img  id="bg" src="/images/{{ galleryItem.gallery }}/{{ galleryItem.bgImage }}" >
 
 <header>
+	<span class="navigation">
+    	<a href="{{ path('gallery_show', {'name': galleryItem.gallery}) }}">&lt;</a>
+    </span>
 	<span class="serie">{{ galleryItem.gallery }}</span><span class="name">{{ galleryItem.name }}</span> 
 </header>
 

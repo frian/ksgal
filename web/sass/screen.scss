@@ -253,6 +253,18 @@ span.name {
 	color :#ddd;
 }
 
+span.navigation {
+	font-size : 180%;
+	font-weight : 400;
+	padding : 0 0 0 10px;
+	font-family: 'Lato', sans-serif;
+	color :#ddd;
+}
+
+span.navigation a {
+
+	color : #ddd;
+}
 
 footer {
 	position : absolute;
@@ -272,6 +284,11 @@ footer {
 
 
 img.admin { width : 200px!important; }
+
+img.preview { 
+	width : 200px!important;
+	margin : 40px auto
+}
 
 label {
 	font-family: 'Lato', sans-serif;
@@ -338,6 +355,7 @@ div.indexTitle {
 	font-family: 'Muli', sans-serif;
 	font-weight : 300;
 	border-bottom : 1px solid #222;
+	cursor : pointer;
 }
 
 div.indexTitle:nth-child(even) { 
@@ -354,11 +372,20 @@ div.indexDescription {
 }
 
 
+.galleryIndexWrapper {
+	width : 100%;
+	float : left;
+/* 	@include debug(red); */
+}
 
 
 
-
-
+@media only screen and (min-device-width : 768px) {
+/* Styles */
+	.galleryIndexWrapper {
+		width : 50%;
+	}
+}
 
 
 

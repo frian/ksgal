@@ -9,7 +9,7 @@
 
     {% for gallery in galleries %}
     
-    	<div class="indexTitle">
+    	<div id="{{ gallery.name }}"  class="indexTitle">
 	        {{ gallery.name }}
 			<div class="indexDescription">
 	            {{ gallery.description }}

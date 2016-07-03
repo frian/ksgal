@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<header>
+    <span class="navigation">
+    	<a href="{{ path('gallery_index') }}">&lt;</a>
+    </span>  
+    <span class="serie">{{ name }}</span>
+</header>
+
+<div class="index">
+	{% for item in galleryItems %}
+
+	<div class="galleryIndexWrapper">
+    	<div class="indexTitle">
+    		{{ item.name }}
+    	</div>
+    	<div class="text-center">
+    		<a href="/galleryitem/{{ item.id }}">
+	    		<img class="preview" src="{{ imgPath }}/{{ name }}/{{ item.image }}">
+	    	</a>
+    	</div>
+	</div>
+
+	{% endfor %}
+</div>
+
+{% endblock %}
