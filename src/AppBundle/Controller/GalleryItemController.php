@@ -49,14 +49,6 @@ class GalleryItemController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
         	
-        	// get path to gallery
-        	$pathToGallery = $this->container->getParameter('brochures_directory').'/'.$galleryItem->getGallery();
-        	
-        	// create gallery if not existing
-        	if (!file_exists($pathToGallery)) {
-        		mkdir($pathToGallery, 0755, true);
-        	}
-
         	// get main image
         	$image = $galleryItem->getImage();
         	
@@ -135,12 +127,13 @@ class GalleryItemController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
         	
-			// if images has not changes set old image
-        	if ( $editForm->get('image')->getData() == null ) {
+			// if images has not changed set old image
+//         	if ( $editForm->get('image')->getData() == null ) {
+       		if ( $galleryItem->getImage() == null ) {
         		$galleryItem->setImage($currentImage);
         	}
         	
-        	if ( $editForm->get('bgimage')->getData() == null ) {
+        	if ( $galleryItem->getBgimage() == null ) {
         		$galleryItem->setBgimage($currentBgimage);
         	}
         	

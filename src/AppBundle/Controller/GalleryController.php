@@ -46,6 +46,15 @@ class GalleryController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+        	
+            // get path to gallery
+        	$pathToGallery = $this->container->getParameter('images_directory').'/'.$gallery->getName();
+        	
+        	// create gallery if not existing
+        	if (!file_exists($pathToGallery)) {
+        		mkdir($pathToGallery, 0755, true);
+        	}
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($gallery);
             $em->flush();

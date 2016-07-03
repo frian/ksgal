@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block my_js %}
+<script src="/js/imageedit.js"></script>
+{% endblock %}
+
 {% block body %}
 
     <h1>GalleryItem edit</h1>
@@ -26,17 +30,23 @@
 {{ form_errors(edit_form.gallery) }}
 {{ form_widget(edit_form.gallery) }}
 	</div>
-	<div>
+	<div id="image">
 {{ form_label(edit_form.image) }}
+	
+		<img class="admin" src="{{ imgPath }}{{ edit_form.vars.value.gallery }}/{{ edit_form.vars.value.image }}" />	
+
 {{ form_errors(edit_form.image) }}
 {{ form_widget(edit_form.image) }}
-		<img class="admin" src="{{ imgPath }}{{ edit_form.vars.value.gallery }}/{{ edit_form.vars.value.image }}" />
+
 	</div>
-	<div>
+	<div id="bgimage">
 {{ form_label(edit_form.bgimage) }}
+
+		<img class="admin" src="{{ imgPath }}{{ edit_form.vars.value.gallery }}/{{ edit_form.vars.value.bgimage }}" />	
+
 {{ form_errors(edit_form.bgimage) }}
 {{ form_widget(edit_form.bgimage) }}
-		<img class="admin" src="{{ imgPath }}{{ edit_form.vars.value.gallery }}/{{ edit_form.vars.value.bgimage }}" />
+
 	</div>
 	
 	
