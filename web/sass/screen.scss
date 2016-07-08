@@ -294,7 +294,7 @@ footer {
 }
 
 
-img.admin { width : 200px!important; }
+img.admin { width : 200px!important; margin : 20px;}
 
 img.preview { 
 	width : 200px!important;
@@ -302,12 +302,18 @@ img.preview {
 }
 
 label {
+/* 	display : inline-block; */
 	font-family: 'Lato', sans-serif;
 	height : 40px;
 	line-height : 40px;
 	font-size :150%;
 	color : white;
 /* 	@include debug(red)  */
+}
+
+.imageEdit label {
+	height : 50px;
+	line-height : 50px;
 }
 
 input[type="text"], input[type="text"]:focus, select {
@@ -331,17 +337,33 @@ textarea, textarea:focus {
 	border : 1px solid #555
 }
 
-input[type="button"], input[type="submit"] {
+input[type="file"] {
+	font-family : helvetica;
+}
 
-    background-color: #333; /* Green */
+
+
+input[type="button"], input[type="submit"], .myButton {
+
+	font-family : helvetica;
+	color : #ccc;
+    background-color: #555;
     border: none;
-    color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: block;
     font-size: 16px;
     margin : 10px 0;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover, .myButton:hover {
+	color : #eee;
+	background-color: #222;
+}
+
+.delete:hover {
+	background-color: #a00!important;
 }
 
 table.index {
@@ -353,8 +375,7 @@ table.index {
 div.index {
 /* 	@include debug(red); */
 	max-width : 900px;
-	margin : auto;
-	margin-top : 40px;
+	margin : 40px auto;
 }
 
 /* index title */
@@ -390,10 +411,36 @@ div.indexDescription {
 }
 
 
+.imageEdit {
+	
+	width : 100%;
+	float : left;
+	text-align : center;
+/* 	margin : 20px 0; */
+	padding : 20px;
+	background-color : #333;
+	border : 1px solid black;
+/* 	@include debug(red); */
+}
+
+#imageButton, #bgimageButton { margin : auto; }
+
+#bgimageSize, #imageSize {
+	margin : 10px;
+}
+
+.wrapper {
+	background-color : #333;
+}
 
 @media only screen and (min-device-width : 768px) {
 /* Styles */
 	.galleryIndexWrapper {
+		width : 50%;
+	}
+
+	.imageEdit {
+	
 		width : 50%;
 	}
 }

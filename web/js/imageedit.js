@@ -35,6 +35,7 @@ $(function() {
 	image.onload = function() {
 	  width = this.width;
 	  height = this.height;
+	  $("#imageSize").html("size : " + width + "x" + height + "px");
 	  console.log("1 " + width + " x " + height);
 	};
 	image.src = $("#image-full").attr("src");
@@ -46,6 +47,7 @@ $(function() {
 	bgimage.onload = function() {
 	  bgwidth = this.width;
 	  bgheight = this.height;
+	  $("#bgimageSize").html("size : " + bgwidth + "x" + bgheight + "px");
 	  console.log("2 " + bgwidth + " x " + bgheight);
 	};
 	bgimage.src = $("#image-bg").attr("src");

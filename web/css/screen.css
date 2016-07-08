@@ -368,6 +368,7 @@ footer {
 /* line 297, ../sass/screen.scss */
 img.admin {
   width: 200px !important;
+  margin: 20px;
 }
 
 /* line 299, ../sass/screen.scss */
@@ -378,6 +379,7 @@ img.preview {
 
 /* line 304, ../sass/screen.scss */
 label {
+  /* 	display : inline-block; */
   font-family: 'Lato', sans-serif;
   height: 40px;
   line-height: 40px;
@@ -386,7 +388,13 @@ label {
   /* 	@include debug(red)  */
 }
 
-/* line 313, ../sass/screen.scss */
+/* line 314, ../sass/screen.scss */
+.imageEdit label {
+  height: 50px;
+  line-height: 50px;
+}
+
+/* line 319, ../sass/screen.scss */
 input[type="text"], input[type="text"]:focus, select {
   color: white;
   height: 40px;
@@ -396,12 +404,12 @@ input[type="text"], input[type="text"]:focus, select {
   font-family: helvetica;
 }
 
-/* line 322, ../sass/screen.scss */
+/* line 328, ../sass/screen.scss */
 option {
   padding: 0 10px;
 }
 
-/* line 326, ../sass/screen.scss */
+/* line 332, ../sass/screen.scss */
 textarea, textarea:focus {
   font-family: helvetica;
   color: white;
@@ -410,12 +418,17 @@ textarea, textarea:focus {
   border: 1px solid #555;
 }
 
-/* line 334, ../sass/screen.scss */
-input[type="button"], input[type="submit"] {
-  background-color: #333;
-  /* Green */
+/* line 340, ../sass/screen.scss */
+input[type="file"] {
+  font-family: helvetica;
+}
+
+/* line 346, ../sass/screen.scss */
+input[type="button"], input[type="submit"], .myButton {
+  font-family: helvetica;
+  color: #ccc;
+  background-color: #555;
   border: none;
-  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -424,17 +437,27 @@ input[type="button"], input[type="submit"] {
   margin: 10px 0;
 }
 
+/* line 360, ../sass/screen.scss */
+input[type="button"]:hover, input[type="submit"]:hover, .myButton:hover {
+  color: #eee;
+  background-color: #222;
+}
+
+/* line 365, ../sass/screen.scss */
+.delete:hover {
+  background-color: #a00 !important;
+}
+
 /* index frame */
-/* line 353, ../sass/screen.scss */
+/* line 375, ../sass/screen.scss */
 div.index {
   /* 	@include debug(red); */
   max-width: 900px;
-  margin: auto;
-  margin-top: 40px;
+  margin: 40px auto;
 }
 
 /* index title */
-/* line 362, ../sass/screen.scss */
+/* line 383, ../sass/screen.scss */
 div.indexTitle {
   padding: 20px;
   font-size: 200%;
@@ -444,12 +467,12 @@ div.indexTitle {
   cursor: pointer;
 }
 
-/* line 372, ../sass/screen.scss */
+/* line 393, ../sass/screen.scss */
 div.indexTitle:nth-child(even) {
   background-color: #2c2c2c;
 }
 
-/* line 376, ../sass/screen.scss */
+/* line 397, ../sass/screen.scss */
 div.indexDescription {
   padding: 20px 30px 0px 30px;
   font-size: 60%;
@@ -458,17 +481,49 @@ div.indexDescription {
   line-height: 130%;
 }
 
-/* line 386, ../sass/screen.scss */
+/* line 407, ../sass/screen.scss */
 .galleryIndexWrapper {
   width: 100%;
   float: left;
   /* 	@include debug(red); */
 }
 
+/* line 414, ../sass/screen.scss */
+.imageEdit {
+  width: 100%;
+  float: left;
+  text-align: center;
+  /* 	margin : 20px 0; */
+  padding: 20px;
+  background-color: #333;
+  border: 1px solid black;
+  /* 	@include debug(red); */
+}
+
+/* line 426, ../sass/screen.scss */
+#imageButton, #bgimageButton {
+  margin: auto;
+}
+
+/* line 428, ../sass/screen.scss */
+#bgimageSize, #imageSize {
+  margin: 10px;
+}
+
+/* line 432, ../sass/screen.scss */
+.wrapper {
+  background-color: #333;
+}
+
 @media only screen and (min-device-width: 768px) {
   /* Styles */
-  /* line 396, ../sass/screen.scss */
+  /* line 438, ../sass/screen.scss */
   .galleryIndexWrapper {
+    width: 50%;
+  }
+
+  /* line 442, ../sass/screen.scss */
+  .imageEdit {
     width: 50%;
   }
 }

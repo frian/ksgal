@@ -1,21 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Gallery edit</h1>
+<header>
+	<span class="serie">Edit gallery</span>
+</header>
+<div class="index">
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        <input class="button expanded" type="submit" value="Edit" />
     {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('gallery_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+	<div>
+		<a class="myButton" href="{{ path('admin_homepage') }}">Back to the list</a>
+	</div>
+	<div>
+        {{ form_start(delete_form) }}
+            <input class="button expanded delete" type="submit" value="Delete">
+        {{ form_end(delete_form) }}
+	</div>
+
+</div>
 {% endblock %}

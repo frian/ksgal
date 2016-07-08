@@ -1,20 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>GalleryItem list</h1>
-
+<header>
+	<span class="serie">Gallery items list</span>
+</header>
+<div class="index">
     <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Dimensions</th>
-                <th>Techniques</th>
-                <th>Image</th>
-                <th>Bgimage</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
         <tbody>
         {% for galleryItem in galleryItems %}
             <tr>
@@ -22,8 +13,8 @@
                 <td>{{ galleryItem.name }}</td>
                 <td>{{ galleryItem.dimensions }}</td>
                 <td>{{ galleryItem.techniques }}</td>
-                <td>{{ galleryItem.image }}</td>
-                <td>{{ galleryItem.bgimage }}</td>
+{#                 <td>{{ galleryItem.image }}</td>#}
+{#                 <td>{{ galleryItem.bgimage }}</td>#}
                 <td>
                     <ul>
                         <li>
@@ -41,7 +32,8 @@
 
     <ul>
         <li>
-            <a href="{{ path('galleryitem_new') }}">Create a new entry</a>
+            <a class="myButton" href="{{ path('galleryitem_new') }}">Create a new entry</a>
         </li>
     </ul>
+</div>
 {% endblock %}
