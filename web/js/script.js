@@ -2,6 +2,8 @@ $(function() {
 
 	console.log('loaded');
 	
+	$("body").css("overflow", "hidden");
+	
 	var count = 0;
 	var image = $("#bg");
 

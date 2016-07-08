@@ -15,7 +15,6 @@ $(function() {
 	$(document).on("click",".indexTitle",function(e) {
     	window.location.href = "/gallery/show/" + $(this).attr("id");
     });
-
 	
 });
 
