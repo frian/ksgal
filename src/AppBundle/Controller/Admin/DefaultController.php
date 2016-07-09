@@ -13,13 +13,11 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-    	
+
     	$em = $this->getDoctrine()->getManager();
-    	
+
     	$galleries = $em->getRepository('AppBundle:Gallery')->findAll();
-    	
-    	
-    	
+
         return $this->render('admin/default/index.html.twig', array(
             'galleries' => $galleries,
         ));

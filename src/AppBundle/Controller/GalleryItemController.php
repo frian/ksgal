@@ -18,23 +18,58 @@ use Symfony\Component\HttpFoundation\File\File;
  */
 class GalleryItemController extends Controller
 {
-
-
-	
     /**
      * Finds and displays a GalleryItem entity.
      *
-     * @Route("/{id}", name="galleryitem_show")
+     * @Route("/{gallery}/{id}", name="galleryitem_show")
      * @Method("GET")
      */
-    public function showAction(GalleryItem $galleryItem)
+    public function showAction($gallery, GalleryItem $galleryItem)
     {
-//         $deleteForm = $this->createDeleteForm($galleryItem);
-
         return $this->render('galleryitem/show.html.twig', array(
             'galleryItem' => $galleryItem,
-//             'delete_form' => $deleteForm->createView(),
         ));
     }
 
+    /**
+     * Finds and displays the next GalleryItem entity.
+     *
+     * @Route("/{gallery}/next/{id}", name="galleryitem_show_next")
+     * @Method("GET")
+     */
+    public function showNextAction($gallery, GalleryItem $galleryItem)
+    {
+    	
+    	// get galleryItem id
+    	$itemId = $galleryItem->getId();
+    	
+    	
+    	$em = $this->getDoctrine()->getManager();
+    	
+    	
+    	// get the gallery
+    	$gal = $em->getRepository('AppBundle:Gallery')->findOneByName($gallery);
+    	
+
+    	// get galleryItems in gallery
+    	$items = $em->getRepository('AppBundle:GalleryItem')->findByGallery($gal);
+    	
+    	$next = $items[$itemId + 1 - 1];
+    	
+    	
+    	
+    	$num = count($items);
+    	
+    	print $num;
+    	
+    	
+    	
+    	
+    	
+    	
+    	return $this->render('galleryitem/show.html.twig', array(
+    			'galleryItem' => $galleryItem,
+    	));
+    }
+    
 }

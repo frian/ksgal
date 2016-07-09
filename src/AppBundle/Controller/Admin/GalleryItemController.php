@@ -47,7 +47,13 @@ class GalleryItemController extends Controller
         $form = $this->createForm('AppBundle\Form\GalleryItemType', $galleryItem);
         $form->handleRequest($request);
 
+        print $this->container->getParameter('images_directory').'/'.$galleryItem->getGallery();
+        
+        
         if ($form->isSubmitted() && $form->isValid()) {
+        	
+        	
+        	$pathToGallery = $this->container->getParameter('images_directory').'/'.$galleryItem->getGallery();
         	
         	// get main image
         	$image = $galleryItem->getImage();
@@ -61,7 +67,7 @@ class GalleryItemController extends Controller
         	// set image name
         	$galleryItem->setImage($image->getClientOriginalName());
         	
-        	
+
         	
         	// get main image
         	$bgImage = $galleryItem->getBgimage();
@@ -74,12 +80,16 @@ class GalleryItemController extends Controller
         	
         	// set image name
         	$galleryItem->setBgimage($bgImage->getClientOriginalName());
-        	
+
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($galleryItem);
             $em->flush();
 
-            return $this->redirectToRoute('galleryitem_show', array('id' => $galleryItem->getId()));
+            return $this->redirectToRoute('gallery_admin_show_content', 
+            	array(
+            		'name' => $galleryItem->getGallery(),
+            	));
         }
 
         return $this->render('admin/galleryitem/new.html.twig', array(

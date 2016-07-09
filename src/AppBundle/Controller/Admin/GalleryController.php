@@ -43,7 +43,7 @@ class GalleryController extends Controller
             $em->persist($gallery);
             $em->flush();
 
-            return $this->redirectToRoute('gallery_show', array('id' => $gallery->getId()));
+            return $this->redirectToRoute('admin_homepage');
         }
 
         return $this->render('admin/gallery/new.html.twig', array(

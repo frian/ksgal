@@ -31,19 +31,22 @@ body {
 .tableCell { display : table-cell }
 .vertMiddle { vertical-align : middle }
 
+a { color : #ddd }
+a:hover { color : #eee }
 
 $indexCOntainerSize : 300px;
 
-.indexContainer {
+.indexContainer, #login {
 	
 	position : relative;
 	margin : auto;
 	width : $indexCOntainerSize;
 	height : $indexCOntainerSize;
-	cursor : pointer;
 }
 
-
+.indexContainer {
+	cursor : pointer;
+}
 
 
 .vericalText {
@@ -253,6 +256,11 @@ span.name {
 	color :#ddd;
 }
 
+span.login {
+	float : right;
+	margin-right : 20px;
+}
+
 span.navigation {
 	font-size : 180%;
 	font-weight : 400;
@@ -316,7 +324,7 @@ label {
 	line-height : 50px;
 }
 
-input[type="text"], input[type="text"]:focus, select {
+input[type="text"], input[type="text"]:focus, input[type="password"], input[type="password"]:focus, select {
 	color : white;
 	height : 40px;
 	line-height : 40px;
@@ -355,6 +363,7 @@ input[type="button"], input[type="submit"], .myButton {
     display: block;
     font-size: 16px;
     margin : 10px 0;
+    width : 100%;
 }
 
 input[type="button"]:hover, input[type="submit"]:hover, .myButton:hover {
