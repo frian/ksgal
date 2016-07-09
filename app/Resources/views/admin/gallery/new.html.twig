@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<header class="admin">
+    <span class="navigation">
+    	<a href="{{ path('admin_homepage') }}">&lt;</a>
+    </span>
+	<span class="serie">Add gallery</span>
+</header>
+<div class="index">
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input class="button expanded" type="submit" value="Create" />
+    {{ form_end(form) }}
+
+	<div>
+		<a  class="myButton" href="{{ path('admin_homepage') }}">Back to the list</a>
+	</div>
+</div>
+{% endblock %}

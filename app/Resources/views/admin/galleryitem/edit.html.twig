@@ -6,11 +6,15 @@
 
 {% block body %}
 
-<header>
+<header class="admin">
+    <span class="navigation">
+    	<a href="{{ path('gallery_admin_show_content', { 'name': edit_form.vars.value.gallery }) }}">&lt;</a>
+    </span>
 	<span class="serie">Edit image</span>
 </header>
 
 <div class="index">
+
     {{ form_start(edit_form) }}
 
 	<div>

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<header class="admin">
+    <span class="navigation">
+    	<a href="{{ path('admin_homepage') }}">&lt;</a>
+    </span>
+    <span class="name">{{ name }}</span>
+</header>
+
+<div class="index">
+	{% for item in galleryItems %}
+
+	<div class="galleryIndexWrapper">
+    	<div class="indexTitle">
+    		{{ item.name }}
+    	</div>
+    	<div class="text-center">
+    		<a href="/admin/galleryitem/{{ item.id }}/edit">
+	    		<img class="preview" src="{{ imgPath }}/{{ name }}/{{ item.image }}">
+	    	</a>
+    	</div>
+	</div>
+
+	{% endfor %}
+</div>
+
+{% endblock %}

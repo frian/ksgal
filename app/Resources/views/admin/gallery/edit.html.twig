@@ -1,7 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<header>
+<header class="admin">
+    <span class="navigation">
+    	<a href="{{ path('admin_homepage') }}">&lt;</a>
+    </span>
 	<span class="serie">Edit gallery</span>
 </header>
 <div class="index">

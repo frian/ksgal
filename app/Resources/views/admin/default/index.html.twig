@@ -1,8 +1,8 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-<header>
-	<span class="serie">Admin dashboard</span>
+<header class="admin">
+	<span class="name">dashboard</span>
 </header>
 
 
@@ -41,7 +41,12 @@
 {#             </td>#}
 {#         </tr>#}
     {% endfor %}
-
+	<div>
+		<a class="myButton" href="{{ path('gallery_new') }}">Add new gallery</a>
+	</div>
+	<div>
+		<a class="myButton" href="{{ path('galleryitem_new') }}">Add new gallery item</a>
+	</div>
 </div>
 
 

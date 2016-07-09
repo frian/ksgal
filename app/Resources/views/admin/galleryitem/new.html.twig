@@ -1,9 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<header>
+<header class="admin">
+    <span class="navigation">
+    	<a href="{{ path('admin_homepage') }}">&lt;</a>
+    </span>
 	<span class="serie">Add gallery item</span>
 </header>
+
 <div class="index">
     {{ form_start(form) }}
         {{ form_widget(form) }}
@@ -12,7 +16,7 @@
 
     <ul>
         <li>
-            <a class="myButton" href="{{ path('galleryitem_index') }}">Back to the list</a>
+            <a class="myButton" href="{{ path('admin_homepage') }}">Back to the list</a>
         </li>
     </ul>
 </div>

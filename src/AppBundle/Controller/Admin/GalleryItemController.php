@@ -82,7 +82,7 @@ class GalleryItemController extends Controller
             return $this->redirectToRoute('galleryitem_show', array('id' => $galleryItem->getId()));
         }
 
-        return $this->render('galleryitem/new.html.twig', array(
+        return $this->render('admin/galleryitem/new.html.twig', array(
             'galleryItem' => $galleryItem,
             'form' => $form->createView(),
         ));
@@ -124,7 +124,7 @@ class GalleryItemController extends Controller
             return $this->redirectToRoute('galleryitem_edit', array('id' => $galleryItem->getId()));
         }
 
-        return $this->render('galleryitem/edit.html.twig', array(
+        return $this->render('admin/galleryitem/edit.html.twig', array(
             'galleryItem' => $galleryItem,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

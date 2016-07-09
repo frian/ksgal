@@ -362,6 +362,11 @@ input[type="button"]:hover, input[type="submit"]:hover, .myButton:hover {
 	background-color: #222;
 }
 
+input[type="button"]:focus, input[type="submit"]:focus, .myButton:focus {
+	color : #eee;
+	background-color: #222;
+}
+
 .delete:hover {
 	background-color: #a00!important;
 }
@@ -432,6 +437,9 @@ div.indexDescription {
 .wrapper {
 	background-color : #333;
 }
+
+
+.admin { background-color : #600 }
 
 @media only screen and (min-device-width : 768px) {
 /* Styles */

@@ -46,7 +46,7 @@ class GalleryController extends Controller
             return $this->redirectToRoute('gallery_show', array('id' => $gallery->getId()));
         }
 
-        return $this->render('gallery/new.html.twig', array(
+        return $this->render('admin/gallery/new.html.twig', array(
             'gallery' => $gallery,
             'form' => $form->createView(),
         ));
@@ -88,7 +88,7 @@ class GalleryController extends Controller
             return $this->redirectToRoute('gallery_edit', array('id' => $gallery->getId()));
         }
 
-        return $this->render('gallery/edit.html.twig', array(
+        return $this->render('/admin/gallery/edit.html.twig', array(
             'gallery' => $gallery,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -130,4 +130,27 @@ class GalleryController extends Controller
             ->getForm()
         ;
     }
+
+
+    /**
+     * Finds and displays a Gallery content.
+     *
+     * @Route("/show/{name}", name="gallery_admin_show_content")
+     * @Method("GET")
+     */
+    public function showGalleryAction($name)
+    {
+    
+    	$gallery = $this->getDoctrine()
+    	->getRepository('AppBundle:Gallery')
+    	->findOneByName($name);
+    	 
+    	$galleryItems = $gallery->getGalleryItems();
+    
+    	return $this->render('admin/gallery/showContent.html.twig', array(
+    		'name' => $name,
+    		'galleryItems' => $galleryItems
+    	));
+    }
+
 }
