@@ -85,7 +85,7 @@ class GalleryController extends Controller
             $em->persist($gallery);
             $em->flush();
 
-            return $this->redirectToRoute('gallery_edit', array('id' => $gallery->getId()));
+            return $this->redirectToRoute('admin_homepage');
         }
 
         return $this->render('/admin/gallery/edit.html.twig', array(

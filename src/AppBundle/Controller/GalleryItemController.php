@@ -54,17 +54,9 @@ class GalleryItemController extends Controller
     	// get galleryItems in gallery
     	$items = $em->getRepository('AppBundle:GalleryItem')->findByGallery($gal);
     	
-    	$next = $items[$itemId + 1 - 1];
-    	
-    	
-    	
-    	$num = count($items);
-    	
-    	print $num;
-    	
-    	
-    	
-    	
+    	if ( isset($items[$itemId]) ) {
+    		$galleryItem = $items[$itemId];
+    	}
     	
     	
     	return $this->render('galleryitem/show.html.twig', array(
