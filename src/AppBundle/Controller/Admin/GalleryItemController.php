@@ -117,16 +117,45 @@ class GalleryItemController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
         	
+        	$pathToGallery = $this->container->getParameter('images_directory').'/'.$galleryItem->getGallery();
+        	
 			// if images has not changed set old image
-//         	if ( $editForm->get('image')->getData() == null ) {
        		if ( $galleryItem->getImage() == null ) {
         		$galleryItem->setImage($currentImage);
+        	}
+        	else {
+        		// get main image
+        		$image = $galleryItem->getImage();
+        		
+        		// Move and rename
+        		$image->move(
+        				$pathToGallery,
+        				$image->getClientOriginalName()
+        				);
+        		 
+        		// set image name
+        		$galleryItem->setImage($image->getClientOriginalName());        		
         	}
         	
         	if ( $galleryItem->getBgimage() == null ) {
         		$galleryItem->setBgimage($currentBgimage);
         	}
-        	
+        	else {
+        		// get main image
+        		$bgImage = $galleryItem->getBgimage();
+        		 
+        		// Move and rename
+        		$bgImage->move(
+        				$pathToGallery,
+        				$bgImage->getClientOriginalName()
+        				);
+        		
+        		// set image name
+        		$galleryItem->setBgimage($bgImage->getClientOriginalName());        		
+        	}
+
+			
+        	// persist
             $em = $this->getDoctrine()->getManager();
             $em->persist($galleryItem);
             $em->flush();

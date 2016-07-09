@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block my_js %}
+<script src="/js/imageedit.js"></script>
+{% endblock %}
+
 {% block body %}
 <header class="admin">
     <span class="navigation">
@@ -11,9 +15,48 @@
 
 <div class="index">
     {{ form_start(form) }}
+    
+    <div>
+        {{ form_label(form.name) }}
+        {{ form_errors(form.name) }}
+        {{ form_widget(form.name) }}
+    </div>
+
+    <div>
+        {{ form_label(form.dimensions) }}
+        {{ form_errors(form.dimensions) }}
+        {{ form_widget(form.dimensions) }}
+    </div>
+
+    <div>
+        {{ form_label(form.techniques) }}
+        {{ form_errors(form.techniques) }}
+        {{ form_widget(form.techniques) }}
+    </div>
+
+	<div class="wrapper clearfix">
+        <div class="imageEdit">
+            {{ form_label(form.image) }}
+            {{ form_errors(form.image) }}
+            {{ form_widget(form.image) }}
+            <img class="admin" id="image-full" src="#" alt="your image" />
+            <div id="image-full-size"></div>
+        </div>
+    
+        <div class="imageEdit">
+            {{ form_label(form.bgimage) }}
+            {{ form_errors(form.bgimage) }}
+            {{ form_widget(form.bgimage) }}
+            <img class="admin" id="image-bg" src="#" alt="your image" />
+            <div id="image-bg-size"></div>
+        </div>
+	</div>
+
         {{ form_widget(form) }}
         <input class="button myButton expanded" type="submit" value="Create" />
     {{ form_end(form) }}
+
+	
 
     <ul>
         <li>

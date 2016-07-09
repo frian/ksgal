@@ -1,32 +1,37 @@
 $(function() {
 
-	console.log('loaded');
+	console.log('loaded imageedit');
 	
-	// hide image upload
-	$("#gallery_item_image").css("display", "none");
+	if(window.location.href.indexOf("edit") > -1) {
 
-	// hide bgimage upload
-	$("#gallery_item_bgimage").css("display", "none");
-	
-	// add modify image button
-	var addImageButton = $('<input type="button" id="imageButton" value="modifier l\'image"/>');
-	
-	$("#image").append(addImageButton);
-	
-	// add modify bgimage button
-	var addBgimageButton = $('<input type="button" id="bgimageButton" value="modifier l\'image de fond"/>');
-	
-	$("#bgimage").append(addBgimageButton);
+		// hide image upload
+		$("#gallery_item_image").css("display", "none");
 
-	// show image upload on modify image
-    $(document).on("click","#imageButton",function(e) {
-    	$("#gallery_item_image").css("display", "block");
-    });
+		// hide bgimage upload
+		$("#gallery_item_bgimage").css("display", "none");
+		
+		// add modify image button
+		var addImageButton = $('<input type="button" id="imageButton" value="modifier l\'image"/>');
+		
+		$("#image").append(addImageButton);
+		
+		// add modify bgimage button
+		var addBgimageButton = $('<input type="button" id="bgimageButton" value="modifier l\'image de fond"/>');
+		
+		$("#bgimage").append(addBgimageButton);
 
-	// show bgimage upload on modify image
-    $(document).on("click","#bgimageButton",function(e) {
-    	$("#gallery_item_bgimage").css("display", "block");
-    });
+		// show image upload on modify image
+	    $(document).on("click","#imageButton",function(e) {
+	    	$("#gallery_item_image").css("display", "block");
+	    });
+
+		// show bgimage upload on modify image
+	    $(document).on("click","#bgimageButton",function(e) {
+	    	$("#gallery_item_bgimage").css("display", "block");
+	    });
+
+	}
+
 
 
     // get image size

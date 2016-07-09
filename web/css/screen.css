@@ -543,18 +543,23 @@ div.indexDescription {
 }
 
 /* line 451, ../sass/screen.scss */
-.admin {
+header.admin {
   background-color: #600;
+}
+
+/* line 454, ../sass/screen.scss */
+.polo {
+  color: red;
 }
 
 @media only screen and (min-device-width: 768px) {
   /* Styles */
-  /* line 455, ../sass/screen.scss */
+  /* line 457, ../sass/screen.scss */
   .galleryIndexWrapper {
     width: 50%;
   }
 
-  /* line 459, ../sass/screen.scss */
+  /* line 461, ../sass/screen.scss */
   .imageEdit {
     width: 50%;
   }
