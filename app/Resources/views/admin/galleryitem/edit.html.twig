@@ -11,6 +11,7 @@
     	<a href="{{ path('gallery_admin_show_content', { 'name': edit_form.vars.value.gallery }) }}">&lt;</a>
     </span>
 	<span class="serie">Edit image</span>
+	{{ include('admin/default/_logout.html.twig') }}
 </header>
 
 <div class="index">
@@ -18,50 +19,44 @@
     {{ form_start(edit_form) }}
 
 	<div>
-{{ form_label(edit_form.name) }}
-{{ form_errors(edit_form.name) }}
-{{ form_widget(edit_form.name) }}
+        {{ form_label(edit_form.name) }}
+        {{ form_errors(edit_form.name) }}
+        {{ form_widget(edit_form.name) }}
 	</div>
 	<div>
-{{ form_label(edit_form.dimensions) }}
-{{ form_errors(edit_form.dimensions) }}
-{{ form_widget(edit_form.dimensions) }}
+        {{ form_label(edit_form.dimensions) }}
+        {{ form_errors(edit_form.dimensions) }}
+        {{ form_widget(edit_form.dimensions) }}
 	</div>
 	<div>
-{{ form_label(edit_form.techniques) }}
-{{ form_errors(edit_form.techniques) }}
-{{ form_widget(edit_form.techniques) }}
+        {{ form_label(edit_form.techniques) }}
+        {{ form_errors(edit_form.techniques) }}
+        {{ form_widget(edit_form.techniques) }}
 	</div>
 	<div>
-{{ form_label(edit_form.gallery) }}
-{{ form_errors(edit_form.gallery) }}
-{{ form_widget(edit_form.gallery) }}
+        {{ form_label(edit_form.gallery) }}
+        {{ form_errors(edit_form.gallery) }}
+        {{ form_widget(edit_form.gallery) }}
 	</div>
-
 
 	<div class="wrapper clearfix">
-
-
-	<div id="image" class="imageEdit">
-{{ form_label(edit_form.image) }}
+		<div id="image" class="imageEdit">
+            {{ form_label(edit_form.image) }}
 	
-		<img class="admin" id="image-full" src="{{ imgPath }}{{ edit_form.vars.value.gallery }}/{{ edit_form.vars.value.image }}" />	
-<div id="imageSize"></div>
-{{ form_errors(edit_form.image) }}
-{{ form_widget(edit_form.image) }}
-
-	</div>
+			<img class="admin" id="image-full" src="{{ imgPath }}{{ edit_form.vars.value.gallery }}/{{ edit_form.vars.value.image }}" />	
+			<div id="imageSize"></div>
+            {{ form_errors(edit_form.image) }}
+            {{ form_widget(edit_form.image) }}
+		</div>
 	
-	<div id="bgimage" class="imageEdit">
-{{ form_label(edit_form.bgimage) }}
+		<div id="bgimage" class="imageEdit">
+            {{ form_label(edit_form.bgimage) }}
 
-		<img class="admin" id="image-bg" src="{{ imgPath }}{{ edit_form.vars.value.gallery }}/{{ edit_form.vars.value.bgimage }}" />	
-<div id="bgimageSize"></div>
-{{ form_errors(edit_form.bgimage) }}
-{{ form_widget(edit_form.bgimage) }}
-
-	</div>
-	
+			<img class="admin" id="image-bg" src="{{ imgPath }}{{ edit_form.vars.value.gallery }}/{{ edit_form.vars.value.bgimage }}" />	
+			<div id="bgimageSize"></div>
+            {{ form_errors(edit_form.bgimage) }}
+            {{ form_widget(edit_form.bgimage) }}
+		</div>
 	</div>
 	
 	<div>
