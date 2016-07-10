@@ -512,10 +512,11 @@ div.indexDescription {
 .galleryIndexWrapper {
   width: 100%;
   float: left;
-  /* 	@include debug(red); */
+  padding-bottom: 20px;
+  border: 1px solid red;
 }
 
-/* line 428, ../sass/screen.scss */
+/* line 429, ../sass/screen.scss */
 .imageEdit {
   width: 100%;
   float: left;
@@ -527,39 +528,47 @@ div.indexDescription {
   /* 	@include debug(red); */
 }
 
-/* line 440, ../sass/screen.scss */
+/* line 441, ../sass/screen.scss */
 #imageButton, #bgimageButton {
   margin: auto;
 }
 
-/* line 442, ../sass/screen.scss */
+/* line 443, ../sass/screen.scss */
 #bgimageSize, #imageSize {
   margin: 10px;
 }
 
-/* line 446, ../sass/screen.scss */
+/* line 447, ../sass/screen.scss */
 .wrapper {
   background-color: #333;
 }
 
-/* line 451, ../sass/screen.scss */
+/* line 452, ../sass/screen.scss */
 header.admin {
   background-color: #600;
 }
 
-/* line 454, ../sass/screen.scss */
+/* line 456, ../sass/screen.scss */
+span.details {
+  display: block;
+  width: 100%;
+  font-family: helvetica;
+  padding: 5px 0;
+}
+
+/* line 465, ../sass/screen.scss */
 .polo {
   color: red;
 }
 
 @media only screen and (min-device-width: 768px) {
   /* Styles */
-  /* line 457, ../sass/screen.scss */
+  /* line 468, ../sass/screen.scss */
   .galleryIndexWrapper {
     width: 50%;
   }
 
-  /* line 461, ../sass/screen.scss */
+  /* line 472, ../sass/screen.scss */
   .imageEdit {
     width: 50%;
   }

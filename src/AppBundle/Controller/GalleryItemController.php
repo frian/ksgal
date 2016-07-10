@@ -43,6 +43,7 @@ class GalleryItemController extends Controller
     	// get galleryItem id
     	$itemId = $galleryItem->getId();
     	
+    	print $itemId;
     	
     	$em = $this->getDoctrine()->getManager();
     	
@@ -53,9 +54,18 @@ class GalleryItemController extends Controller
 
     	// get galleryItems in gallery
     	$items = $em->getRepository('AppBundle:GalleryItem')->findByGallery($gal);
-    	
-    	if ( isset($items[$itemId]) ) {
-    		$galleryItem = $items[$itemId];
+
+
+    	$next = 1;
+    	foreach ( $items as $item ) {
+    		
+    		if ( $item->getId() == $itemId ) {
+    			
+				if ( isset($items[$next]) ) {
+					$galleryItem = $items[$next];
+				}
+    		}
+    		$next++;
     	}
     	
     	

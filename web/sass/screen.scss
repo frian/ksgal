@@ -421,7 +421,8 @@ div.indexDescription {
 .galleryIndexWrapper {
 	width : 100%;
 	float : left;
-/* 	@include debug(red); */
+	padding-bottom : 20px;
+	@include debug(red);
 }
 
 
@@ -449,6 +450,16 @@ div.indexDescription {
 
 
 header.admin { background-color : #600 }
+
+
+
+span.details {
+	display : block;
+	width : 100%;
+	font-family : helvetica;
+	padding : 5px 0;
+}
+
 
 
 .polo {color : red}
