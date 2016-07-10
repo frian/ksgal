@@ -17,7 +17,7 @@ $(function() {
 
 		[ oldProp1, oldProp2 ] = pos[count].split("/")
 		
-		next = (count + 1)%4;
+		next = (count + 1) % 4;
 		
 		[ prop1, prop2 ] = pos[next].split("/");
 		
@@ -28,13 +28,13 @@ $(function() {
 					$(image)
 						.css( oldProp1, "auto")
 						.css( oldProp2, "auto")
-						.css( prop1, "0")
-						.css( prop2, "0")
+						.css( prop1, "-10%")
+						.css( prop2, "-10%")
 					.delay(100)
 					.animate({ opacity: 1 }, 1000, animeBg );
 					
 			    })
-			}, 2000
+			}, 1000
 		);
 
 		count++;
