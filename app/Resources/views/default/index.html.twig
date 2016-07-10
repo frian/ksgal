@@ -5,7 +5,12 @@
 {% endblock %}
 
 {% block body %}
+
+{% if galleryItem is not null %}
+
 <img  id="bg" src="/images/{{ galleryItem.gallery }}/{{ galleryItem.bgImage }}" >
+
+{% endif %}
 
 <div class="table text-center">
 	<div class="tableCell vertMiddle">

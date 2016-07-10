@@ -23,8 +23,8 @@ class DefaultController extends Controller
     	
     	$currentItemOffset = rand(0, $numItems-1);
     	
-    	$currentItem = $galleryItems[$currentItemOffset];
+//     	$currentItem = $galleryItems[$currentItemOffset];
     	
-        return $this->render('default/index.html.twig', array( 'galleryItem' => $currentItem ));
+        return $this->render('default/index.html.twig', array( 'galleryItem' => null ));
     }
 }
