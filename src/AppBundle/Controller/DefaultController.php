@@ -13,7 +13,18 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig');
+
+    	$em = $this->getDoctrine()->getManager();
+    	 
+    	// get the gallery
+    	$galleryItems = $em->getRepository('AppBundle:GalleryItem')->findAll();
+    	
+    	$numItems = count($galleryItems);
+    	
+    	$currentItemOffset = rand(0, $numItems-1);
+    	
+    	$currentItem = $galleryItems[$currentItemOffset];
+    	
+        return $this->render('default/index.html.twig', array( 'galleryItem' => $currentItem ));
     }
 }

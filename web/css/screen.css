@@ -125,14 +125,15 @@ a:hover {
   margin: auto;
   width: 300px;
   height: 300px;
+  background-color: #111;
 }
 
-/* line 47, ../sass/screen.scss */
+/* line 48, ../sass/screen.scss */
 .indexContainer {
   cursor: pointer;
 }
 
-/* line 52, ../sass/screen.scss */
+/* line 53, ../sass/screen.scss */
 .vericalText {
   width: 1px;
   word-wrap: break-word;
@@ -140,19 +141,20 @@ a:hover {
   /* this is just for good looks */
 }
 
-/* line 60, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 .k {
   position: absolute;
   top: 0;
   left: 0;
   width: 90%;
   height: 80%;
-  font-size: 300px;
+  font-size: 260px;
   font-family: 'Bilbo', cursive;
+  padding: 20px;
   /* 	@include debug(yellow); */
 }
 
-/* line 72, ../sass/screen.scss */
+/* line 74, ../sass/screen.scss */
 .k1 {
   position: absolute;
   top: 10px;
@@ -166,7 +168,7 @@ a:hover {
   /*  	@include debug(yellow);  */
 }
 
-/* line 86, ../sass/screen.scss */
+/* line 88, ../sass/screen.scss */
 .k2 {
   position: absolute;
   top: 40%;
@@ -179,7 +181,7 @@ a:hover {
   /*  	@include debug(yellow);  */
 }
 
-/* line 101, ../sass/screen.scss */
+/* line 103, ../sass/screen.scss */
 .test1 {
   position: absolute;
   top: 0;
@@ -188,7 +190,7 @@ a:hover {
   font-family: 'Bilbo', cursive;
 }
 
-/* line 109, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 .test2 {
   position: absolute;
   top: 0;
@@ -197,7 +199,7 @@ a:hover {
   font-family: 'Bilbo', cursive;
 }
 
-/* line 118, ../sass/screen.scss */
+/* line 120, ../sass/screen.scss */
 .art {
   position: absolute;
   right: 20%;
@@ -205,7 +207,7 @@ a:hover {
   font-family: 'Lato', sans-serif;
 }
 
-/* line 121, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 .gallery {
   position: absolute;
   bottom: 0px;
@@ -217,7 +219,7 @@ a:hover {
   font-weight: 300;
 }
 
-/* line 133, ../sass/screen.scss */
+/* line 135, ../sass/screen.scss */
 .galleryGradient {
   position: absolute;
   bottom: 0px;
@@ -236,12 +238,12 @@ a:hover {
 }
 
 /* .relative { position : relative } */
-/* line 152, ../sass/screen.scss */
+/* line 154, ../sass/screen.scss */
 .absolute {
   position: absolute;
 }
 
-/* line 155, ../sass/screen.scss */
+/* line 157, ../sass/screen.scss */
 #imageWrapper {
   color: black;
   position: relative;
@@ -259,14 +261,14 @@ a:hover {
   /* 	); */
 }
 
-/* line 179, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 img {
   -moz-box-shadow: 0px 0px 5px #333333;
   -webkit-box-shadow: 0px 0px 5px #333333;
   box-shadow: 0px 0px 5px #333333;
 }
 
-/* line 190, ../sass/screen.scss */
+/* line 192, ../sass/screen.scss */
 table tbody, table tfoot, table thead, table tbody tr:nth-child(2n) {
   background: none;
   border: none;
@@ -274,21 +276,21 @@ table tbody, table tfoot, table thead, table tbody tr:nth-child(2n) {
 }
 
 /* td { @include debug(red) } */
-/* line 198, ../sass/screen.scss */
+/* line 200, ../sass/screen.scss */
 td.title {
   line-height: 50px;
   font-size: 230%;
   font-weight: 400;
 }
 
-/* line 205, ../sass/screen.scss */
+/* line 207, ../sass/screen.scss */
 td.desc {
   line-height: 15px;
   font-size: 120%;
   font-weight: 400;
 }
 
-/* line 212, ../sass/screen.scss */
+/* line 214, ../sass/screen.scss */
 #bg {
   position: absolute;
   /* 	top : 0; */
@@ -297,7 +299,12 @@ td.desc {
   z-index: 10;
 }
 
-/* line 220, ../sass/screen.scss */
+/* line 222, ../sass/screen.scss */
+#logo {
+  z-index: 20;
+}
+
+/* line 226, ../sass/screen.scss */
 #bgTmp {
   position: absolute;
   top: 0;
@@ -306,7 +313,7 @@ td.desc {
   z-index: 0;
 }
 
-/* line 230, ../sass/screen.scss */
+/* line 236, ../sass/screen.scss */
 header {
   position: absolute;
   top: 0;
@@ -319,7 +326,7 @@ header {
   z-index: 50;
 }
 
-/* line 242, ../sass/screen.scss */
+/* line 248, ../sass/screen.scss */
 span.serie {
   font-size: 150%;
   font-weight: 300;
@@ -328,7 +335,7 @@ span.serie {
   color: #ccc;
 }
 
-/* line 251, ../sass/screen.scss */
+/* line 257, ../sass/screen.scss */
 span.name {
   font-size: 180%;
   font-weight: 300;
@@ -337,13 +344,13 @@ span.name {
   color: #ddd;
 }
 
-/* line 259, ../sass/screen.scss */
+/* line 265, ../sass/screen.scss */
 span.login {
   float: right;
   margin-right: 20px;
 }
 
-/* line 264, ../sass/screen.scss */
+/* line 270, ../sass/screen.scss */
 span.navigation {
   font-size: 180%;
   font-weight: 400;
@@ -352,12 +359,12 @@ span.navigation {
   color: #ddd;
 }
 
-/* line 272, ../sass/screen.scss */
+/* line 278, ../sass/screen.scss */
 span.navigation a {
   color: #ddd;
 }
 
-/* line 277, ../sass/screen.scss */
+/* line 283, ../sass/screen.scss */
 div.logo {
   display: inline-block;
   width: 40px;
@@ -368,7 +375,7 @@ div.logo {
   font-family: 'Bilbo', cursive;
 }
 
-/* line 288, ../sass/screen.scss */
+/* line 294, ../sass/screen.scss */
 footer {
   position: absolute;
   bottom: 0;
@@ -385,19 +392,19 @@ footer {
   z-index: 50;
 }
 
-/* line 305, ../sass/screen.scss */
+/* line 311, ../sass/screen.scss */
 img.admin {
   width: 200px !important;
   margin: 20px;
 }
 
-/* line 307, ../sass/screen.scss */
+/* line 313, ../sass/screen.scss */
 img.preview {
   width: 200px !important;
   margin: 40px auto;
 }
 
-/* line 312, ../sass/screen.scss */
+/* line 318, ../sass/screen.scss */
 label {
   /* 	display : inline-block; */
   font-family: 'Lato', sans-serif;
@@ -408,13 +415,13 @@ label {
   /* 	@include debug(red)  */
 }
 
-/* line 322, ../sass/screen.scss */
+/* line 328, ../sass/screen.scss */
 .imageEdit label {
   height: 50px;
   line-height: 50px;
 }
 
-/* line 327, ../sass/screen.scss */
+/* line 333, ../sass/screen.scss */
 input[type="text"], input[type="text"]:focus, input[type="password"], input[type="password"]:focus, select {
   color: white;
   height: 40px;
@@ -424,12 +431,12 @@ input[type="text"], input[type="text"]:focus, input[type="password"], input[type
   font-family: helvetica;
 }
 
-/* line 336, ../sass/screen.scss */
+/* line 342, ../sass/screen.scss */
 option {
   padding: 0 10px;
 }
 
-/* line 340, ../sass/screen.scss */
+/* line 346, ../sass/screen.scss */
 textarea, textarea:focus {
   font-family: helvetica;
   color: white;
@@ -438,12 +445,12 @@ textarea, textarea:focus {
   border: 1px solid #555;
 }
 
-/* line 348, ../sass/screen.scss */
+/* line 354, ../sass/screen.scss */
 input[type="file"] {
   font-family: helvetica;
 }
 
-/* line 354, ../sass/screen.scss */
+/* line 360, ../sass/screen.scss */
 input[type="button"], input[type="submit"], .myButton {
   font-family: helvetica;
   color: #ccc;
@@ -458,25 +465,25 @@ input[type="button"], input[type="submit"], .myButton {
   width: 100%;
 }
 
-/* line 369, ../sass/screen.scss */
+/* line 375, ../sass/screen.scss */
 input[type="button"]:hover, input[type="submit"]:hover, .myButton:hover {
   color: #eee;
   background-color: #222;
 }
 
-/* line 374, ../sass/screen.scss */
+/* line 380, ../sass/screen.scss */
 input[type="button"]:focus, input[type="submit"]:focus, .myButton:focus {
   color: #eee;
   background-color: #222;
 }
 
-/* line 379, ../sass/screen.scss */
+/* line 385, ../sass/screen.scss */
 .delete:hover {
   background-color: #a00 !important;
 }
 
 /* index frame */
-/* line 389, ../sass/screen.scss */
+/* line 395, ../sass/screen.scss */
 div.index {
   /* 	@include debug(red); */
   max-width: 900px;
@@ -484,7 +491,7 @@ div.index {
 }
 
 /* index title */
-/* line 397, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 div.indexTitle {
   padding: 20px;
   font-size: 200%;
@@ -494,12 +501,12 @@ div.indexTitle {
   cursor: pointer;
 }
 
-/* line 407, ../sass/screen.scss */
+/* line 413, ../sass/screen.scss */
 div.indexTitle:nth-child(even) {
   background-color: #2c2c2c;
 }
 
-/* line 411, ../sass/screen.scss */
+/* line 417, ../sass/screen.scss */
 div.indexDescription {
   padding: 20px 30px 0px 30px;
   font-size: 60%;
@@ -508,7 +515,7 @@ div.indexDescription {
   line-height: 130%;
 }
 
-/* line 421, ../sass/screen.scss */
+/* line 427, ../sass/screen.scss */
 .galleryIndexWrapper {
   width: 100%;
   float: left;
@@ -516,7 +523,7 @@ div.indexDescription {
   border: 1px solid red;
 }
 
-/* line 429, ../sass/screen.scss */
+/* line 435, ../sass/screen.scss */
 .imageEdit {
   width: 100%;
   float: left;
@@ -528,27 +535,27 @@ div.indexDescription {
   /* 	@include debug(red); */
 }
 
-/* line 441, ../sass/screen.scss */
+/* line 447, ../sass/screen.scss */
 #imageButton, #bgimageButton {
   margin: auto;
 }
 
-/* line 443, ../sass/screen.scss */
+/* line 449, ../sass/screen.scss */
 #bgimageSize, #imageSize {
   margin: 10px;
 }
 
-/* line 447, ../sass/screen.scss */
+/* line 453, ../sass/screen.scss */
 .wrapper {
   background-color: #333;
 }
 
-/* line 452, ../sass/screen.scss */
+/* line 458, ../sass/screen.scss */
 header.admin {
   background-color: #600;
 }
 
-/* line 456, ../sass/screen.scss */
+/* line 462, ../sass/screen.scss */
 span.details {
   display: block;
   width: 100%;
@@ -556,19 +563,19 @@ span.details {
   padding: 5px 0;
 }
 
-/* line 465, ../sass/screen.scss */
+/* line 471, ../sass/screen.scss */
 .polo {
   color: red;
 }
 
 @media only screen and (min-device-width: 768px) {
   /* Styles */
-  /* line 468, ../sass/screen.scss */
+  /* line 474, ../sass/screen.scss */
   .galleryIndexWrapper {
     width: 50%;
   }
 
-  /* line 472, ../sass/screen.scss */
+  /* line 478, ../sass/screen.scss */
   .imageEdit {
     width: 50%;
   }

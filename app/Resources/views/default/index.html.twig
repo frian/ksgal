@@ -1,10 +1,16 @@
 {% extends "base.html.twig" %}
 
+{% block my_js %}
+<script src="/js/script.js"></script>
+{% endblock %}
+
 {% block body %}
+<img  id="bg" src="/images/{{ galleryItem.gallery }}/{{ galleryItem.bgImage }}" >
+
 <div class="table text-center">
 	<div class="tableCell vertMiddle">
 		
-		<div class="indexContainer">
+		<div  id="logo" class="indexContainer">
 			<div class="k">K</div>
 			<div class="gallery">art gallery</div>
 			<div class="galleryGradient"></div>

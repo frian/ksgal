@@ -1,7 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<header>
+<header class="admin">
+    <span class="navigation">
+    	<a href="{{ path('admin_homepage') }}">&lt;</a>
+    </span>
 	<span class="serie">Gallery items list</span>
 </header>
 <div class="index">
@@ -9,16 +12,17 @@
         <tbody>
         {% for galleryItem in galleryItems %}
             <tr>
-                <td><a href="{{ path('galleryitem_show', { 'id': galleryItem.id }) }}">{{ galleryItem.id }}</a></td>
+                <td><a href="{{ path('galleryitem_show', { 'id': galleryItem.id, 'gallery': galleryItem.gallery }) }}">{{ galleryItem.id }}</a></td>
                 <td>{{ galleryItem.name }}</td>
-                <td>{{ galleryItem.dimensions }}</td>
-                <td>{{ galleryItem.techniques }}</td>
+                <td>{{ galleryItem.gallery }}</td>
+                <td class="show-for-medium">{{ galleryItem.dimensions }}</td>
+                <td class="show-for-medium">{{ galleryItem.techniques }}</td>
 {#                 <td>{{ galleryItem.image }}</td>#}
 {#                 <td>{{ galleryItem.bgimage }}</td>#}
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('galleryitem_show', { 'id': galleryItem.id }) }}">show</a>
+                            <a href="{{ path('galleryitem_show', { 'id': galleryItem.id, 'gallery': galleryItem.gallery }) }}">show</a>
                         </li>
                         <li>
                             <a href="{{ path('galleryitem_edit', { 'id': galleryItem.id }) }}">edit</a>

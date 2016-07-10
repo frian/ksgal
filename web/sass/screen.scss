@@ -42,6 +42,7 @@ $indexCOntainerSize : 300px;
 	margin : auto;
 	width : $indexCOntainerSize;
 	height : $indexCOntainerSize;
+	background-color : #111;
 }
 
 .indexContainer {
@@ -63,8 +64,9 @@ $indexCOntainerSize : 300px;
 	left : 0;
 	width : 90%;
 	height : 80%;
-	font-size : 300px;
+	font-size : 260px;
 	font-family: 'Bilbo', cursive;
+	padding : 20px;
 /* 	@include debug(yellow); */
 }
 
@@ -215,6 +217,10 @@ td.desc {
 /* 	left : 0; */
 	max-width:none;
 	z-index : 10;
+}
+
+#logo {
+	z-index : 20;
 }
 
 #bgTmp {

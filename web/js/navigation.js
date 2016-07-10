@@ -1,5 +1,12 @@
 $(function() {
 
+	console.log(location.pathname);
+	
+	if ( location.pathname == "/" ) {
+		$("body").css( 'overflow', 'hidden' );
+	}
+	
+	
 	/*
 	 * click on index logo
 	 */

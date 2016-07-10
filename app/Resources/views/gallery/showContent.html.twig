@@ -12,7 +12,13 @@
 <div class="index">
 	{% for item in galleryItems %}
 
+		{% if loop.index0 is even %}
+		<div class="clearfix">
+		{% endif %}
+
+
 	<div class="galleryIndexWrapper">
+	
     	<div class="indexTitle">
     		{{ item.name }}
     	</div>
@@ -28,6 +34,13 @@
     	</div>
 
 	</div>
+
+
+		{% if loop.index0 is odd %}
+		</div>
+		{% endif %}
+
+
 
 	{% endfor %}
 </div>
