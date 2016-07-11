@@ -114,6 +114,30 @@ a:hover {
   vertical-align: middle;
 }
 
+/* line 20, ../sass/_global.scss */
+.button {
+  background-color: #333;
+  font-family: helvetica;
+  margin: 0;
+}
+
+/* line 21, ../sass/_global.scss */
+.button:hover {
+  background-color: #222;
+}
+
+/* line 23, ../sass/_global.scss */
+a.social {
+  position: relative;
+  display: inline-block;
+  height: 36px;
+}
+
+/* line 29, ../sass/_global.scss */
+a.social:hover {
+  top: -10px;
+}
+
 /* line 4, ../sass/_index.scss */
 .indexContainer, #login {
   position: relative;
@@ -347,18 +371,18 @@ span.navigation a {
 */
 /* line 75, ../sass/screen.scss */
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  /* 	position : absolute; */
+  /* 	bottom : 0; */
+  /* 	left : 0; */
   width: 100%;
-  height: 30px;
-  line-height: 30px;
+  height: 40px;
+  line-height: 40px;
   background: rgba(0, 0, 0, 0.8);
   font-size: 100%;
   font-weight: 400;
   font-family: 'Lato', sans-serif;
   text-align: center;
-  color: #ccc;
+  /* 	color :#ccc; */
   z-index: 50;
 }
 
@@ -428,11 +452,15 @@ img.preview {
 */
 /* line 151, ../sass/screen.scss */
 div.index {
+  position: relative;
+  top: 40px;
   max-width: 900px;
-  margin: 40px auto;
+  margin: auto;
+  /* 	padding : 20px; */
+  border: 1px solid red;
 }
 
-/* line 156, ../sass/screen.scss */
+/* line 160, ../sass/screen.scss */
 div.indexTitle {
   padding: 20px;
   font-size: 200%;
@@ -442,12 +470,12 @@ div.indexTitle {
   cursor: pointer;
 }
 
-/* line 166, ../sass/screen.scss */
+/* line 170, ../sass/screen.scss */
 div.indexTitle:nth-child(even) {
   background-color: #2c2c2c;
 }
 
-/* line 170, ../sass/screen.scss */
+/* line 174, ../sass/screen.scss */
 div.indexDescription {
   padding: 20px 30px 0px 30px;
   font-size: 60%;
@@ -456,25 +484,25 @@ div.indexDescription {
   line-height: 130%;
 }
 
-/* line 179, ../sass/screen.scss */
+/* line 183, ../sass/screen.scss */
 .galleryIndexWrapper {
   width: 100%;
   float: left;
   padding-bottom: 20px;
-  border: 1px solid red;
+  /* 	@include debug(red); */
 }
 
-/* line 186, ../sass/screen.scss */
+/* line 190, ../sass/screen.scss */
 #bgimageSize, #imageSize {
   margin: 10px;
 }
 
-/* line 190, ../sass/screen.scss */
+/* line 194, ../sass/screen.scss */
 .wrapper {
   background-color: #333;
 }
 
-/* line 194, ../sass/screen.scss */
+/* line 198, ../sass/screen.scss */
 span.details {
   display: block;
   width: 100%;
@@ -483,13 +511,25 @@ span.details {
 }
 
 @media only screen and (min-device-width: 768px) {
-  /* line 204, ../sass/screen.scss */
+  /* line 208, ../sass/screen.scss */
   .galleryIndexWrapper {
     width: 50%;
   }
 
-  /* line 208, ../sass/screen.scss */
+  /* line 212, ../sass/screen.scss */
   .imageEdit {
     width: 50%;
   }
+}
+/* line 220, ../sass/screen.scss */
+.stickyWrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -40px;
+}
+
+/* line 227, ../sass/screen.scss */
+.footer, .push {
+  height: 40px;
 }

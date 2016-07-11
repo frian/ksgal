@@ -17,3 +17,15 @@ a:hover { color : #eee }
 .vertMiddle { vertical-align : middle }
 
 
+.button { background-color : #333; font-family : helvetica; margin : 0; }
+.button:hover { background-color : #222 }
+
+a.social {
+	position : relative;
+	display : inline-block;
+	height : 36px;
+}
+
+a.social:hover {
+	top : -10px;
+}

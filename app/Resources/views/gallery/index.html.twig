@@ -4,41 +4,62 @@
 <header>
 	<span class="serie">Gallery list</span>
 </header>
-
-<div class="index">
-
-    {% for gallery in galleries %}
+<div class="stickyWrapper">
+    <div class="index">
     
-    	<div id="{{ gallery.name }}"  class="indexTitle">
-	        {{ gallery.name }} 
-			<div class="indexDescription">
-	            {{ gallery.description }}
-			</div>
-		</div>
-    
-    
-    
-{#         <tr>#}
-{#             <td><a href="{{ path('gallery_show', { 'id': gallery.id }) }}">{{ gallery.id }}</a></td>#}
-{#             <td>{{ gallery.name }}</td>#}
-{#             <td>{{ gallery.description }}</td>#}
-{#             <td>#}
-{#                 <ul>#}
-{#                     <li>#}
-{#                         <a href="{{ path('gallery_show', { 'id': gallery.id }) }}">show</a>#}
-{#                     </li>#}
-{#                     <li>#}
-{#                         <a href="{{ path('gallery_edit', { 'id': gallery.id }) }}">edit</a>#}
-{#                     </li>#}
-{#                 </ul>#}
-{#             </td>#}
-{#         </tr>#}
-    {% endfor %}
-
+        {% for gallery in galleries %}
+        
+        	<div id="{{ gallery.name }}"  class="indexTitle">
+    	        {{ gallery.name }} 
+    			<div class="indexDescription">
+    	            {{ gallery.description }}
+    			</div>
+    		</div>
+        
+        
+        
+    {#         <tr>#}
+    {#             <td><a href="{{ path('gallery_show', { 'id': gallery.id }) }}">{{ gallery.id }}</a></td>#}
+    {#             <td>{{ gallery.name }}</td>#}
+    {#             <td>{{ gallery.description }}</td>#}
+    {#             <td>#}
+    {#                 <ul>#}
+    {#                     <li>#}
+    {#                         <a href="{{ path('gallery_show', { 'id': gallery.id }) }}">show</a>#}
+    {#                     </li>#}
+    {#                     <li>#}
+    {#                         <a href="{{ path('gallery_edit', { 'id': gallery.id }) }}">edit</a>#}
+    {#                     </li>#}
+    {#                 </ul>#}
+    {#             </td>#}
+    {#         </tr>#}
+        {% endfor %}
+    </div>
+	<div class="push"></div>
 </div>
 {#     <ul>#}
 {#         <li>#}
 {#             <a href="{{ path('gallery_new') }}">Create a new entry</a>#}
 {#         </li>#}
 {#     </ul>#}
+{# <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a>#}
+{# <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>#}
+
+<footer class="footer">
+
+<a class="button social" href="https://twitter.com/intent/tweet?url={{ path(app.request.attributes.get('_route'), 
+        app.request.attributes.get('_route_params')) }};text=yes" target="_blank" alt ="Tweet this pen">
+    Tweet
+</a>
+
+
+<a class="button social"
+  href="https://www.facebook.com/sharer/sharer.php?u=http://k.at-info.ch/gallery/" 
+  >
+  Share on Facebook
+</a>
+
+
+</footer>
+
 {% endblock %}
