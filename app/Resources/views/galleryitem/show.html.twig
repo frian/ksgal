@@ -26,6 +26,11 @@
 </div>
 
 <footer>
-	{{ galleryItem.dimensions }} / {{ galleryItem.techniques }}
+	{{ galleryItem.dimensions }} / {{ galleryItem.techniques }} - {{ app.request.attributes.get('_route') }}
 </footer>
+
+
+
+<div id="prev"><a href="/galleryitem/{{ galleryItem.gallery }}/{{ galleryItem.id }}/prev"></a></div>
+<div id="next"><a href="/galleryitem/{{ galleryItem.gallery }}/{{ galleryItem.id }}/next"></a></div>
 {% endblock %}

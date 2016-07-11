@@ -35,7 +35,7 @@ class GalleryItemController extends Controller
     /**
      * Finds and displays the next GalleryItem entity.
      *
-     * @Route("/{gallery}/next/{id}", name="galleryitem_show_next")
+     * @Route("/{gallery}/{id}/next", name="galleryitem_show_next")
      * @Method("GET")
      */
     public function showNextAction($gallery, GalleryItem $galleryItem)
@@ -75,7 +75,7 @@ class GalleryItemController extends Controller
     /**
      * Finds and displays the previous GalleryItem entity.
      *
-     * @Route("/{gallery}/prev/{id}", name="galleryitem_show_prev")
+     * @Route("/{gallery}/{id}/prev", name="galleryitem_show_prev")
      * @Method("GET")
      */
     public function showPrevAction($gallery, GalleryItem $galleryItem)

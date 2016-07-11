@@ -47,9 +47,6 @@ class GalleryItemController extends Controller
         $form = $this->createForm('AppBundle\Form\GalleryItemType', $galleryItem);
         $form->handleRequest($request);
 
-        print $this->container->getParameter('images_directory').'/'.$galleryItem->getGallery();
-        
-        
         if ($form->isSubmitted() && $form->isValid()) {
         	
         	
