@@ -1,0 +1,86 @@
+/*
+ * -- labels --
+*/
+label {
+	font-family: 'Lato', sans-serif;
+	height : 40px;
+	line-height : 40px;
+	font-size :150%;
+	color : white;
+}
+
+.imageEdit label {
+	height : 50px;
+	line-height : 50px;
+}
+
+
+/*
+ * -- text, password and select inputs --
+*/
+input[type="text"], input[type="text"]:focus, input[type="password"], input[type="password"]:focus, select {
+	color : white;
+	height : 40px;
+	line-height : 40px;
+	background-color : #333;
+	border : 1px solid #555;
+	font-family : helvetica;
+}
+
+
+/*
+ * -- file input --
+*/
+
+input[type="file"] {
+	font-family : helvetica;
+}
+
+
+/*
+ * -- button and submit --
+*/
+input[type="button"], input[type="submit"], .myButton {
+
+	font-family : helvetica;
+	color : #ccc;
+    background-color: #555;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin : 10px 0;
+    width : 100%;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover, .myButton:hover {
+	color : #eee;
+	background-color: #222;
+}
+
+input[type="button"]:focus, input[type="submit"]:focus, .myButton:focus {
+	color : #eee;
+	background-color: #222;
+}
+
+
+/*
+ * -- misc --
+*/
+option {
+	padding : 10px;
+}
+
+textarea, textarea:focus {
+	font-family : helvetica;
+	color : white;
+	height : 100px;
+	background-color : #333;
+	border : 1px solid #555
+}
+
+.delete:hover {
+	background-color: #a00!important;
+}

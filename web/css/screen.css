@@ -73,53 +73,48 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* OWN MIXINS */
 /* Simple animation with named arguments */
-/* line 15, ../sass/screen.scss */
+/* line 1, ../sass/_global.scss */
 html, body {
   height: 100%;
 }
 
-/* line 17, ../sass/screen.scss */
+/* line 3, ../sass/_global.scss */
 body {
   color: #eee;
   background-color: #111;
-  /* 	@include my-background-image( */
-  /* 	    linear-gradient( */
-  /* 	      top left,  */
-  /* 		    rgba(50,50,50,1), */
-  /* 	        rgba( 25, 25, 25, 1) */
-  /* 	    ) */
-  /* 	  ); */
-  /* 	  overflow : hidden; */
 }
 
-/* line 30, ../sass/screen.scss */
+/* line 8, ../sass/_global.scss */
+a {
+  color: #ddd;
+}
+
+/* line 9, ../sass/_global.scss */
+a:hover {
+  color: #eee;
+}
+
+/*
+ * make divs behave like table cells
+*/
+/* line 15, ../sass/_global.scss */
 .table {
   display: table;
   width: 100%;
   height: 100%;
 }
 
-/* line 31, ../sass/screen.scss */
+/* line 16, ../sass/_global.scss */
 .tableCell {
   display: table-cell;
 }
 
-/* line 32, ../sass/screen.scss */
+/* line 17, ../sass/_global.scss */
 .vertMiddle {
   vertical-align: middle;
 }
 
-/* line 34, ../sass/screen.scss */
-a {
-  color: #ddd;
-}
-
-/* line 35, ../sass/screen.scss */
-a:hover {
-  color: #eee;
-}
-
-/* line 39, ../sass/screen.scss */
+/* line 4, ../sass/_index.scss */
 .indexContainer, #login {
   position: relative;
   margin: auto;
@@ -128,20 +123,12 @@ a:hover {
   background-color: #111;
 }
 
-/* line 48, ../sass/screen.scss */
+/* line 13, ../sass/_index.scss */
 .indexContainer {
   cursor: pointer;
 }
 
-/* line 53, ../sass/screen.scss */
-.vericalText {
-  width: 1px;
-  word-wrap: break-word;
-  font-family: monospace;
-  /* this is just for good looks */
-}
-
-/* line 61, ../sass/screen.scss */
+/* line 15, ../sass/_index.scss */
 .k {
   position: absolute;
   top: 0;
@@ -151,38 +138,10 @@ a:hover {
   font-size: 260px;
   font-family: 'Bilbo', cursive;
   padding: 20px;
-  /* 	@include debug(yellow); */
 }
 
-/* line 74, ../sass/screen.scss */
-.k1 {
-  position: absolute;
-  top: 10px;
-  font-weight: bold;
-  left: 0;
-  width: 100%;
-  height: 40%;
-  font-size: 96px;
-  /* 	font-family: 'Bilbo', cursive; */
-  font-family: 'Dancing Script', cursive;
-  /*  	@include debug(yellow);  */
-}
-
-/* line 88, ../sass/screen.scss */
-.k2 {
-  position: absolute;
-  top: 40%;
-  left: 0;
-  width: 100%;
-  height: 40%;
-  font-size: 90px;
-  /* 	font-family: 'Bilbo', cursive; */
-  font-family: 'Dancing Script', cursive;
-  /*  	@include debug(yellow);  */
-}
-
-/* line 103, ../sass/screen.scss */
-.test1 {
+/* line 27, ../sass/_index.scss */
+.tick {
   position: absolute;
   top: 0;
   right: 50px;
@@ -190,8 +149,8 @@ a:hover {
   font-family: 'Bilbo', cursive;
 }
 
-/* line 111, ../sass/screen.scss */
-.test2 {
+/* line 35, ../sass/_index.scss */
+.s {
   position: absolute;
   top: 0;
   right: 20px;
@@ -199,15 +158,7 @@ a:hover {
   font-family: 'Bilbo', cursive;
 }
 
-/* line 120, ../sass/screen.scss */
-.art {
-  position: absolute;
-  right: 20%;
-  font-size: 30px;
-  font-family: 'Lato', sans-serif;
-}
-
-/* line 123, ../sass/screen.scss */
+/* line 44, ../sass/_index.scss */
 .gallery {
   position: absolute;
   bottom: 0px;
@@ -219,14 +170,13 @@ a:hover {
   font-weight: 300;
 }
 
-/* line 135, ../sass/screen.scss */
+/* line 56, ../sass/_index.scss */
 .galleryGradient {
   position: absolute;
   bottom: 0px;
   left: 0;
   width: 100%;
   height: 20%;
-  /* 	background : rgba( 255,255,255, .4 ); */
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzExMTExMSIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxMTExMTEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
   background-size: 100%;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(17, 17, 17, 0)), color-stop(100%, #111111));
@@ -237,83 +187,106 @@ a:hover {
   z-index: 10;
 }
 
-/* .relative { position : relative } */
-/* line 154, ../sass/screen.scss */
-.absolute {
-  position: absolute;
-}
-
-/* line 157, ../sass/screen.scss */
-#imageWrapper {
-  color: black;
-  position: relative;
-  margin: auto;
-  width: 400px;
-  z-index: 100;
-  /* 	background : rgba(0,0,0, .8); */
-  padding-bottom: 10px;
-  /* 	box-shadow: 100px 100px 100px rgba(0, 0, 0, 1), -100px -100px 100px rgba(0, 0, 0, 1); */
-  /* 	@include box-shadow( */
-  /* 		100px 100px 100px 0 rgba(0, 0, 0, 1), */
-  /* 		-100px 100px 100px 0 rgba(0, 0, 0, 1), */
-  /* 		100px -100px 100px 0 rgba(0, 0, 0, 1), */
-  /* 		-100px -100px 100px 0 rgba(0, 0, 0, 1) */
-  /* 	); */
-}
-
-/* line 181, ../sass/screen.scss */
-img {
-  -moz-box-shadow: 0px 0px 5px #333333;
-  -webkit-box-shadow: 0px 0px 5px #333333;
-  box-shadow: 0px 0px 5px #333333;
-}
-
-/* line 192, ../sass/screen.scss */
-table tbody, table tfoot, table thead, table tbody tr:nth-child(2n) {
-  background: none;
-  border: none;
-  font-family: 'Lato', sans-serif;
-}
-
-/* td { @include debug(red) } */
-/* line 200, ../sass/screen.scss */
-td.title {
-  line-height: 50px;
-  font-size: 230%;
-  font-weight: 400;
-}
-
-/* line 207, ../sass/screen.scss */
-td.desc {
-  line-height: 15px;
-  font-size: 120%;
-  font-weight: 400;
-}
-
-/* line 214, ../sass/screen.scss */
-#bg {
-  position: absolute;
-  /* 	top : 0; */
-  /* 	left : 0; */
-  max-width: none;
-  z-index: 10;
-}
-
-/* line 222, ../sass/screen.scss */
+/* line 72, ../sass/_index.scss */
 #logo {
   z-index: 20;
 }
 
-/* line 226, ../sass/screen.scss */
-#bgTmp {
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-width: none;
-  z-index: 0;
+/*
+ * -- labels --
+*/
+/* line 4, ../sass/_forms.scss */
+label {
+  font-family: 'Lato', sans-serif;
+  height: 40px;
+  line-height: 40px;
+  font-size: 150%;
+  color: white;
 }
 
-/* line 236, ../sass/screen.scss */
+/* line 12, ../sass/_forms.scss */
+.imageEdit label {
+  height: 50px;
+  line-height: 50px;
+}
+
+/*
+ * -- text, password and select inputs --
+*/
+/* line 21, ../sass/_forms.scss */
+input[type="text"], input[type="text"]:focus, input[type="password"], input[type="password"]:focus, select {
+  color: white;
+  height: 40px;
+  line-height: 40px;
+  background-color: #333;
+  border: 1px solid #555;
+  font-family: helvetica;
+}
+
+/*
+ * -- file input --
+*/
+/* line 35, ../sass/_forms.scss */
+input[type="file"] {
+  font-family: helvetica;
+}
+
+/*
+ * -- button and submit --
+*/
+/* line 43, ../sass/_forms.scss */
+input[type="button"], input[type="submit"], .myButton {
+  font-family: helvetica;
+  color: #ccc;
+  background-color: #555;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+/* line 58, ../sass/_forms.scss */
+input[type="button"]:hover, input[type="submit"]:hover, .myButton:hover {
+  color: #eee;
+  background-color: #222;
+}
+
+/* line 63, ../sass/_forms.scss */
+input[type="button"]:focus, input[type="submit"]:focus, .myButton:focus {
+  color: #eee;
+  background-color: #222;
+}
+
+/*
+ * -- misc --
+*/
+/* line 72, ../sass/_forms.scss */
+option {
+  padding: 10px;
+}
+
+/* line 76, ../sass/_forms.scss */
+textarea, textarea:focus {
+  font-family: helvetica;
+  color: white;
+  height: 100px;
+  background-color: #333;
+  border: 1px solid #555;
+}
+
+/* line 84, ../sass/_forms.scss */
+.delete:hover {
+  background-color: #a00 !important;
+}
+
+/*
+ * -- HEADER --
+*/
+/* line 23, ../sass/screen.scss */
 header {
   position: absolute;
   top: 0;
@@ -326,7 +299,12 @@ header {
   z-index: 50;
 }
 
-/* line 248, ../sass/screen.scss */
+/* line 35, ../sass/screen.scss */
+header.admin {
+  background-color: #600;
+}
+
+/* line 37, ../sass/screen.scss */
 span.serie {
   font-size: 150%;
   font-weight: 300;
@@ -335,7 +313,7 @@ span.serie {
   color: #ccc;
 }
 
-/* line 257, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 span.name {
   font-size: 180%;
   font-weight: 300;
@@ -344,13 +322,13 @@ span.name {
   color: #ddd;
 }
 
-/* line 265, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 span.login {
   float: right;
   margin-right: 20px;
 }
 
-/* line 270, ../sass/screen.scss */
+/* line 59, ../sass/screen.scss */
 span.navigation {
   font-size: 180%;
   font-weight: 400;
@@ -359,23 +337,15 @@ span.navigation {
   color: #ddd;
 }
 
-/* line 278, ../sass/screen.scss */
+/* line 67, ../sass/screen.scss */
 span.navigation a {
   color: #ddd;
 }
 
-/* line 283, ../sass/screen.scss */
-div.logo {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  font-size: 24px;
-  font-family: 'Bilbo', cursive;
-}
-
-/* line 294, ../sass/screen.scss */
+/*
+ * -- FOOTER --
+*/
+/* line 75, ../sass/screen.scss */
 footer {
   position: absolute;
   bottom: 0;
@@ -392,106 +362,77 @@ footer {
   z-index: 50;
 }
 
-/* line 311, ../sass/screen.scss */
+/*
+ * -- TABLES --
+*/
+/* line 94, ../sass/screen.scss */
+table tbody, table tfoot, table thead, table tbody tr:nth-child(2n) {
+  background: none;
+  border: none;
+  font-family: 'Lato', sans-serif;
+}
+
+/*
+ * -- IMAGES --
+*/
+/* line 104, ../sass/screen.scss */
+#imageWrapper {
+  color: black;
+  position: relative;
+  margin: auto;
+  width: 400px;
+  z-index: 100;
+  padding-bottom: 10px;
+}
+
+/* line 113, ../sass/screen.scss */
+#bg {
+  position: absolute;
+  max-width: none;
+  z-index: 10;
+}
+
+/* line 119, ../sass/screen.scss */
+#bgTmp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  z-index: 0;
+}
+
+/* line 127, ../sass/screen.scss */
 img.admin {
   width: 200px !important;
   margin: 20px;
 }
 
-/* line 313, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 img.preview {
   width: 200px !important;
   margin: 40px auto;
 }
 
-/* line 318, ../sass/screen.scss */
-label {
-  /* 	display : inline-block; */
-  font-family: 'Lato', sans-serif;
-  height: 40px;
-  line-height: 40px;
-  font-size: 150%;
-  color: white;
-  /* 	@include debug(red)  */
-}
-
-/* line 328, ../sass/screen.scss */
-.imageEdit label {
-  height: 50px;
-  line-height: 50px;
-}
-
-/* line 333, ../sass/screen.scss */
-input[type="text"], input[type="text"]:focus, input[type="password"], input[type="password"]:focus, select {
-  color: white;
-  height: 40px;
-  line-height: 40px;
-  background-color: #333;
-  border: 1px solid #555;
-  font-family: helvetica;
-}
-
-/* line 342, ../sass/screen.scss */
-option {
-  padding: 0 10px;
-}
-
-/* line 346, ../sass/screen.scss */
-textarea, textarea:focus {
-  font-family: helvetica;
-  color: white;
-  height: 100px;
-  background-color: #333;
-  border: 1px solid #555;
-}
-
-/* line 354, ../sass/screen.scss */
-input[type="file"] {
-  font-family: helvetica;
-}
-
-/* line 360, ../sass/screen.scss */
-input[type="button"], input[type="submit"], .myButton {
-  font-family: helvetica;
-  color: #ccc;
-  background-color: #555;
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  font-size: 16px;
-  margin: 10px 0;
+/* line 137, ../sass/screen.scss */
+.imageEdit {
   width: 100%;
+  float: left;
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  border-left: 1px solid black;
 }
 
-/* line 375, ../sass/screen.scss */
-input[type="button"]:hover, input[type="submit"]:hover, .myButton:hover {
-  color: #eee;
-  background-color: #222;
-}
-
-/* line 380, ../sass/screen.scss */
-input[type="button"]:focus, input[type="submit"]:focus, .myButton:focus {
-  color: #eee;
-  background-color: #222;
-}
-
-/* line 385, ../sass/screen.scss */
-.delete:hover {
-  background-color: #a00 !important;
-}
-
-/* index frame */
-/* line 395, ../sass/screen.scss */
+/*
+ * -- GALLERIES --
+*/
+/* line 151, ../sass/screen.scss */
 div.index {
-  /* 	@include debug(red); */
   max-width: 900px;
   margin: 40px auto;
 }
 
-/* index title */
-/* line 403, ../sass/screen.scss */
+/* line 156, ../sass/screen.scss */
 div.indexTitle {
   padding: 20px;
   font-size: 200%;
@@ -501,12 +442,12 @@ div.indexTitle {
   cursor: pointer;
 }
 
-/* line 413, ../sass/screen.scss */
+/* line 166, ../sass/screen.scss */
 div.indexTitle:nth-child(even) {
   background-color: #2c2c2c;
 }
 
-/* line 417, ../sass/screen.scss */
+/* line 170, ../sass/screen.scss */
 div.indexDescription {
   padding: 20px 30px 0px 30px;
   font-size: 60%;
@@ -515,7 +456,7 @@ div.indexDescription {
   line-height: 130%;
 }
 
-/* line 427, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 .galleryIndexWrapper {
   width: 100%;
   float: left;
@@ -523,39 +464,17 @@ div.indexDescription {
   border: 1px solid red;
 }
 
-/* line 435, ../sass/screen.scss */
-.imageEdit {
-  width: 100%;
-  float: left;
-  text-align: center;
-  /* 	margin : 20px 0; */
-  padding: 20px;
-  background-color: #333;
-  border-left: 1px solid black;
-  /* 	@include debug(red); */
-}
-
-/* line 447, ../sass/screen.scss */
-#imageButton, #bgimageButton {
-  margin: auto;
-}
-
-/* line 449, ../sass/screen.scss */
+/* line 186, ../sass/screen.scss */
 #bgimageSize, #imageSize {
   margin: 10px;
 }
 
-/* line 453, ../sass/screen.scss */
+/* line 190, ../sass/screen.scss */
 .wrapper {
   background-color: #333;
 }
 
-/* line 458, ../sass/screen.scss */
-header.admin {
-  background-color: #600;
-}
-
-/* line 462, ../sass/screen.scss */
+/* line 194, ../sass/screen.scss */
 span.details {
   display: block;
   width: 100%;
@@ -563,19 +482,13 @@ span.details {
   padding: 5px 0;
 }
 
-/* line 471, ../sass/screen.scss */
-.polo {
-  color: red;
-}
-
 @media only screen and (min-device-width: 768px) {
-  /* Styles */
-  /* line 474, ../sass/screen.scss */
+  /* line 204, ../sass/screen.scss */
   .galleryIndexWrapper {
     width: 50%;
   }
 
-  /* line 478, ../sass/screen.scss */
+  /* line 208, ../sass/screen.scss */
   .imageEdit {
     width: 50%;
   }
