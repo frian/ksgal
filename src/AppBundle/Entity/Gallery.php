@@ -42,14 +42,14 @@ class Gallery
      * @ORM\OneToMany(targetEntity="GalleryItem", mappedBy="gallery")
      */
     private $galleryItems;
-    
+
 
     public function __construct()
     {
     	$this->galleryItems = new ArrayCollection();
     }
-    
-    
+
+
     /**
      * stringify
      *

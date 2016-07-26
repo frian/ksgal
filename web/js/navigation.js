@@ -10,13 +10,15 @@ $(function() {
 	}
 	else if ( window.location.href.indexOf("galleryitem") > -1 && window.location.href.indexOf("admin") == -1 ) {
 		disableScroll();
+		$("footer").css("position", "absolute")
 	}
 	else {
 		enableScroll();
 	}
 	
-	
-	
+
+
+
 	/*
 	 * click on index logo
 	 */
@@ -28,7 +30,7 @@ $(function() {
 	 * click on a gallery
 	 */
 	$(document).on("click",".indexTitle",function(e) {
-		
+
 		if (window.location.href.indexOf("admin") > -1) {
 			window.location.href = "/admin/gallery/show/" + $(this).attr("id");
 		}
@@ -48,7 +50,7 @@ $(function() {
 
 	        reader.readAsDataURL(input.files[0]);
 
-		    setTimeout(function() { 
+		    setTimeout(function() {
 
 			    // get image size
 				var image = new Image(); // or document.createElement('img')
@@ -73,7 +75,7 @@ $(function() {
 	$("#gallery_item_bgimage").change(function(){
 	    readURL(this, "image-bg");
 	});
-	
+
 });
 
 
@@ -91,7 +93,7 @@ function preventDefault(e) {
 	e = e || window.event;
 	if (e.preventDefault)
 		e.preventDefault();
-	e.returnValue = false;  
+	e.returnValue = false;
 }
 
 function preventDefaultForScrollKeys(e) {
@@ -108,7 +110,7 @@ function disableScroll() {
 	window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
 	window.ontouchmove  = preventDefault; // mobile
 	document.onkeydown  = preventDefaultForScrollKeys;
-	
+
 	unloadScrollBars();
 }
 
@@ -116,11 +118,11 @@ function enableScroll() {
 
 	if (window.removeEventListener)
 		window.removeEventListener('DOMMouseScroll', preventDefault, false);
-	window.onmousewheel = document.onmousewheel = null; 
-	window.onwheel = null; 
-	window.ontouchmove = null;  
+	window.onmousewheel = document.onmousewheel = null;
+	window.onwheel = null;
+	window.ontouchmove = null;
 	document.onkeydown = null;
-	 
+
 	reloadScrollBars()
 }
 
@@ -133,12 +135,3 @@ function unloadScrollBars() {
     document.documentElement.style.overflow = 'hidden';  // firefox, chrome
     document.body.scroll = "no"; // ie only
 }
-
-
-
-
-
-
-
-
-

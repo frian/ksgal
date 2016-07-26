@@ -7,7 +7,8 @@ $indexCOntainerSize : 300px;
 	margin : auto;
 	width : $indexCOntainerSize;
 	height : $indexCOntainerSize;
-	background-color : #111;
+/* 	background-color : #111; */
+	background : rgba(17,17,17, .4);
 }
 
 .indexContainer { cursor : pointer }

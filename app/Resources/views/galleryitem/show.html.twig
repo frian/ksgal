@@ -12,7 +12,7 @@
 	<span class="navigation">
     	<a href="{{ path('gallery_show_content', {'name': galleryItem.gallery}) }}">&lt;</a>
     </span>
-	<span class="serie">{{ galleryItem.gallery }}</span><span class="name">{{ galleryItem.name }}</span> 
+	<span class="serie show-for-medium">{{ galleryItem.gallery }}</span><span class="name">{{ galleryItem.name }}</span> 
 </header>
 
 <div class="table text-center">
@@ -26,7 +26,11 @@
 </div>
 
 <footer>
-	{{ galleryItem.dimensions }} / {{ galleryItem.techniques }} - {{ app.request.attributes.get('_route') }}
+	{{ galleryItem.dimensions }} / {{ galleryItem.techniques }}
+	<div class="socialButtons">
+	    {{ include('default/_social.html.twig') }}
+	</div>
+	
 </footer>
 
 

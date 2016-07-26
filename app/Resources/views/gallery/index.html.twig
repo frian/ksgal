@@ -46,20 +46,7 @@
 {# <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>#}
 
 <footer class="footer">
-
-<a class="button social" href="https://twitter.com/intent/tweet?url={{ path(app.request.attributes.get('_route'), 
-        app.request.attributes.get('_route_params')) }};text=yes" target="_blank" alt ="Tweet this pen">
-    Tweet
-</a>
-
-
-<a class="button social"
-  href="https://www.facebook.com/sharer/sharer.php?u=http://k.at-info.ch/gallery/" 
-  >
-  Share on Facebook
-</a>
-
-
+	{{ include('default/_social.html.twig') }}
 </footer>
 
 {% endblock %}
