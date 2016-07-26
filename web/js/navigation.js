@@ -10,12 +10,12 @@ $(function() {
 	}
 	else if ( window.location.href.indexOf("galleryitem") > -1 && window.location.href.indexOf("admin") == -1 ) {
 		disableScroll();
-		$("footer").css("position", "absolute")
+		$("footer").css("position", "absolute");
 	}
 	else {
 		enableScroll();
 	}
-	
+
 
 
 
@@ -46,7 +46,7 @@ $(function() {
 
 	        reader.onload = function (e) {
 	            $('#' + imageFile).attr('src', e.target.result);
-	        }
+	        };
 
 	        reader.readAsDataURL(input.files[0]);
 
@@ -123,7 +123,7 @@ function enableScroll() {
 	window.ontouchmove = null;
 	document.onkeydown = null;
 
-	reloadScrollBars()
+	reloadScrollBars();
 }
 
 function reloadScrollBars() {
