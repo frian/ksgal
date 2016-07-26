@@ -4,6 +4,17 @@
 <script src="/js/script.js"></script>
 {% endblock %}
 
+{% block my_tags %}
+<meta name="twitter:card"  content="photo" />
+<meta name="twitter:site"  content="@upchchsupport" />
+<meta name="twitter:title" content="{{ galleryItem.gallery }} / {{ galleryItem.name }}" />
+<meta name="twitter:image" content="{{ app.request.schemeAndHttpHost }}/images/{{ galleryItem.gallery }}/{{ galleryItem.image }}" />
+
+<meta property="og:image"  content="{{ app.request.schemeAndHttpHost }}/images/{{ galleryItem.gallery }}/{{ galleryItem.image }}" />
+{% endblock %}
+
+
+
 {% block body %}
 
 <img  id="bg" src="/images/{{ galleryItem.gallery }}/{{ galleryItem.bgImage }}" >
