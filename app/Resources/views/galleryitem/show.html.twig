@@ -12,7 +12,7 @@
 	<span class="navigation">
     	<a href="{{ path('gallery_show_content', {'name': galleryItem.gallery}) }}">&lt;</a>
     </span>
-	<span class="serie show-for-medium">{{ galleryItem.gallery }}</span><span class="name">{{ galleryItem.name }}</span> 
+	<span class="serie show-for-medium">{{ galleryItem.gallery }}</span><span class="name">{{ galleryItem.name }}</span>
 </header>
 
 <div class="table text-center">
@@ -30,11 +30,19 @@
 	<div class="socialButtons">
 	    {{ include('default/_social.html.twig') }}
 	</div>
-	
+
 </footer>
 
 
 
-<div id="prev"><a href="/galleryitem/{{ galleryItem.gallery }}/{{ galleryItem.id }}/prev"></a></div>
-<div id="next"><a href="/galleryitem/{{ galleryItem.gallery }}/{{ galleryItem.id }}/next"></a></div>
+<div id="prev">
+    {% if previous is not empty %}
+    <a href="/galleryitem/{{ galleryItem.gallery }}/{{ previous }}"></a>
+    {% endif %}
+</div>
+<div id="next">
+    {% if next is not empty %}
+    <a href="/galleryitem/{{ galleryItem.gallery }}/{{ next }}"></a>
+    {% endif %}
+</div>
 {% endblock %}

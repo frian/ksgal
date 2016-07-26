@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -26,90 +27,41 @@ class GalleryItemController extends Controller
      */
     public function showAction($gallery, GalleryItem $galleryItem)
     {
+
+        // get galleryItem id
+        $itemId = $galleryItem->getId();
+
+        $em = $this->getDoctrine()->getManager();
+
+        // get the gallery
+        $gal = $em->getRepository('AppBundle:Gallery')->findOneByName($gallery);
+
+    	// get galleryItems in gallery
+    	$items = $em->getRepository('AppBundle:GalleryItem')->findByGallery($gal);
+
+
+        $offset = $itemId-1;
+
+        if ( isset($items[$offset]) ) {
+            throw new NotFoundHttpException("Page not found");
+        }
+
+        // get previous id
+        $previous = '';
+        if ( isset($items[$offset-1]) ) {
+            $previous = $itemId-1;
+        }
+
+        // get next id
+        $next = '';
+        if ( isset($items[$offset+1]) ) {
+            $next = $itemId+1;
+        }
+
         return $this->render('galleryitem/show.html.twig', array(
-            'galleryItem' => $galleryItem,
+            'galleryItem' => $items[$offset],
+            'previous' => $previous,
+            'next' => $next
         ));
     }
-
-
-    /**
-     * Finds and displays the next GalleryItem entity.
-     *
-     * @Route("/{gallery}/{id}/next", name="galleryitem_show_next")
-     * @Method("GET")
-     */
-    public function showNextAction($gallery, GalleryItem $galleryItem)
-    {
-    	
-    	// get galleryItem id
-    	$itemId = $galleryItem->getId();
-    	
-    	$em = $this->getDoctrine()->getManager();
-    	
-    	// get the gallery
-    	$gal = $em->getRepository('AppBundle:Gallery')->findOneByName($gallery);
-
-    	// get galleryItems in gallery
-    	$items = $em->getRepository('AppBundle:GalleryItem')->findByGallery($gal);
-
-    	
-    	$next = 1;
-    	foreach ( $items as $item ) {
-    		
-    		if ( $item->getId() == $itemId ) {
-    			
-				if ( isset($items[$next]) ) {
-					$galleryItem = $items[$next];
-				}
-    		}
-    		$next++;
-    	}
-    	
-    	
-    	return $this->render('galleryitem/show.html.twig', array(
-    			'galleryItem' => $galleryItem,
-    	));
-    }
-
-
-    /**
-     * Finds and displays the previous GalleryItem entity.
-     *
-     * @Route("/{gallery}/{id}/prev", name="galleryitem_show_prev")
-     * @Method("GET")
-     */
-    public function showPrevAction($gallery, GalleryItem $galleryItem)
-    {
-    	 
-    	// get galleryItem id
-    	$itemId = $galleryItem->getId();
-    	 
-    	$em = $this->getDoctrine()->getManager();
-    	 
-    	// get the gallery
-    	$gal = $em->getRepository('AppBundle:Gallery')->findOneByName($gallery);
-    	 
-    	// get galleryItems in gallery
-    	$items = $em->getRepository('AppBundle:GalleryItem')->findByGallery($gal);
-    
-		$items = array_reverse($items);    	 
-    	 
-    	$next = 1;
-    	foreach ( $items as $item ) {
-    
-    		if ( $item->getId() == $itemId ) {
-    			 
-    			if ( isset($items[$next]) ) {
-    				$galleryItem = $items[$next];
-    			}
-    		}
-    		$next++;
-    	}
-    	 
-    	 
-    	return $this->render('galleryitem/show.html.twig', array(
-    			'galleryItem' => $galleryItem,
-    	));
-    }
-    
 }
