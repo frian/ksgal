@@ -42,7 +42,7 @@ class GalleryItemController extends Controller
 
         $offset = $itemId-1;
 
-        if ( isset($items[$offset]) ) {
+        if ( !isset($items[$offset]) ) {
             throw new NotFoundHttpException("Page not found");
         }
 
