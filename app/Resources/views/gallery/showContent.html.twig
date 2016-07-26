@@ -5,7 +5,7 @@
 <header>
     <span class="navigation">
     	<a href="{{ path('gallery_index') }}">&lt;</a>
-    </span>  
+    </span>
     <span class="serie">{{ name }}</span>
 </header>
 
@@ -18,18 +18,18 @@
 
 
 	<div class="galleryIndexWrapper">
-	
+
     	<div class="indexTitle">
     		{{ item.name }}
     	</div>
     	<div class="text-center">
-    		<a href="/galleryitem/{{ item.gallery }}/{{ item.id }}">
+    		<a href="/galleryitem/{{ item.gallery }}/{{ loop.index }}">
 	    		<img class="preview" src="{{ imgPath }}/{{ name }}/{{ item.image }}">
 	    	</a>
     	</div>
     	<div class="text-center">
     		<span class="details">{{ item.dimensions }}</span>
-    		
+
     		<span class="details">{{ item.techniques }}</span>
     	</div>
 
