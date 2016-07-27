@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-<header>
-    <span class="navigation">
-    	<a href="{{ path('gallery_index') }}">&lt;</a>
-    </span>
-    <span class="serie">{{ name }}</span>
-</header>
-
 <div class="stickyWrapper">
+
+    <header>
+        <span class="navigation">
+        	<a href="{{ path('gallery_index') }}">&lt;</a>
+        </span>
+        <span class="serie">{{ name }}</span>
+    </header>
+
     <div class="index">
     	{% for item in galleryItems %}
 

@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<header>
-	<span class="serie">Gallery list</span>
-</header>
 <!-- <div class="stickyWrapper"> -->
+    <header>
+    	<span class="serie">Gallery list</span>
+    </header>
     <div class="index">
 
         {% for gallery in galleries %}
@@ -18,8 +18,8 @@
         {% endfor %}
 
     </div>
-	<!-- <div class="push"></div>
-</div> -->
+	<div class="push"></div>
+</div>
 
 <!-- <footer class="footer">
 	{{ include('default/_social.html.twig') }}

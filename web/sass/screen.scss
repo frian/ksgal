@@ -21,7 +21,7 @@ $bg-color : #111;
  * -- HEADER --
 */
 header {
-	position : absolute;
+	position : relative;
 	top : 0;
 	left : 0;
 	width : 100%;
@@ -73,7 +73,6 @@ span.navigation a {
  * -- FOOTER --
 */
 footer {
-/* 	position : absolute; */
 	bottom : 0;
 	left : 0;
 	width : 100%;
@@ -126,18 +125,18 @@ table tbody, table tfoot, table thead, table tbody tr:nth-child(2n) {
 	z-index : 0;
 }
 
-img.admin { 
+img.admin {
 	width : 200px!important;
 	margin : 20px;
 }
 
-img.preview { 
+img.preview {
 	width : 200px!important;
 	margin : 40px auto
 }
 
 .imageEdit {
-	
+
 	width : 100%;
 	float : left;
 	text-align : center;
@@ -152,7 +151,6 @@ img.preview {
 */
 div.index {
 	position : relative;
-	top : 50px;
 	max-width : 900px;
 	margin : auto;
 }
@@ -167,8 +165,8 @@ div.indexTitle {
 	cursor : pointer;
 }
 
-div.indexTitle:nth-child(even) { 
-	background-color: #070707; 
+div.indexTitle:nth-child(even) {
+	background-color: #070707;
 }
 
 div.indexDescription {
@@ -251,5 +249,5 @@ margin: 0 auto -40px;
 }
 
 .footer, .push {
-height: 40px;
+    height: 40px;
 }
