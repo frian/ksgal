@@ -8,22 +8,22 @@
 
 {% if galleryItem is not null %}
 
-<img  id="bg" src="/images/{{ galleryItem.gallery }}/{{ galleryItem.bgImage }}" >
+<img  id="bg" src="/{{ imgPath }}/{{ galleryItem.gallery }}/{{ galleryItem.bgImage }}" >
 
 {% endif %}
 
 <div class="table text-center">
 	<div class="tableCell vertMiddle">
-		
+
 		<div id="logo" class="indexContainer">
 			<div class="k">K</div>
 			<div class="gallery">art gallery</div>
 			<div class="galleryGradient"></div>
-			
+
 			<div class="tick">'</div>
 			<div class="s">s</div>
 		</div>
-		
+
 	</div>
 </div>
 {% endblock %}
