@@ -42,12 +42,30 @@ $(function() {
      *   left arrow : show previous image (37)
      */
     $(document).keydown( function(e) {
-//		console.log(e.which);
+		console.log(e.which);
         if (e.which == 39) {
-            navigateImage('next');
+            if ( window.location.href.indexOf("galleryitem") > -1 ) {
+                navigateImage('next');
+            }
         } else if (e.which == 37) {
+            if ( window.location.href.indexOf("galleryitem") > -1 ) {
+                navigateImage('prev');
+            }
+        }
+        else if (e.which == 66) {
 
-            navigateImage('prev');
+            var pathParts = location.pathname.split('/');
+
+            if ( window.location.href.indexOf("galleryitem") > -1 ) {
+                var gallery = pathParts[2];
+
+                var galleryPath = '/gallery/show/' + gallery;
+
+                window.location.href = galleryPath;
+            }
+            else if ( window.location.href.indexOf("gallery/show") > -1 ) {
+                window.location.href = "/gallery/";
+            }
         }
     });
 });
