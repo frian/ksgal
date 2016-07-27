@@ -1,6 +1,5 @@
 $(function() {
 
-
 	/*
 	 * disable / enable scroll
 	 */
@@ -35,8 +34,36 @@ $(function() {
 			window.location.href = "/gallery/show/" + $(this).attr("id");
 		}
     });
+
+    /**
+     * keyboard shortcuts
+     *
+     *   right arrow : show next image (39)
+     *   left arrow : show previous image (37)
+     */
+    $(document).keydown( function(e) {
+//		console.log(e.which);
+        if (e.which == 39) {
+            navigateImage('next');
+        } else if (e.which == 37) {
+
+            navigateImage('prev');
+        }
+    });
 });
 
+/**
+ * -- keyboard navigation
+ */
+
+function navigateImage(direction) {
+
+    var link = $("#" + direction + " a").attr('href');
+
+    if ( link ) {
+        window.location.href = $("#" + direction + " a").attr('href');
+    }
+}
 
 /**
  * -- Prevent scrolling -------------------------------------------------------
