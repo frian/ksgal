@@ -134,17 +134,32 @@ div.socialButtons {
 }
 
 /* line 30, ../sass/_global.scss */
-a.social {
+a.social.button {
   position: relative;
   display: inline-block;
   height: 36px;
-  background-color: #990066;
+  width: 36px;
+  padding: 0;
+  background-color: transparent;
+  transition: width linear 1s;
 }
 
-/* line 38, ../sass/_global.scss */
-a.social:hover, a.social:focus {
-  top: -5px;
-  background-color: #ff0099;
+/* line 40, ../sass/_global.scss */
+i {
+  color: #990066;
+  position: relative;
+  display: block;
+  font-size: 30px;
+}
+
+/* line 47, ../sass/_global.scss */
+i:hover {
+  color: #ff0099;
+}
+
+/* line 51, ../sass/_global.scss */
+a.social.button:hover, a.social:focus {
+  color: #ff0099;
 }
 
 /* line 4, ../sass/_index.scss */
