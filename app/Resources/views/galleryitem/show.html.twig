@@ -5,15 +5,18 @@
 {% endblock %}
 
 {% block my_tags %}
+
+{% set socialImage = app.request.schemeAndHttpHost ~ '/' ~ imgPath ~ '/' ~ galleryItem.gallery ~ '/' ~ galleryItem.image %}
+{% set socialTitle = galleryItem.gallery ~ '/' ~ galleryItem.name %}
+
 <meta name="twitter:card"  content="photo" />
 <meta name="twitter:site"  content="@upchchsupport" />
-<meta name="twitter:title" content="{{ galleryItem.gallery }} / {{ galleryItem.name }}" />
-<meta name="twitter:image" content="{{ app.request.schemeAndHttpHost }}/{{ imgPath }}/{{ galleryItem.gallery }}/{{ galleryItem.image }}" />
+<meta name="twitter:title" content="{{ socialTitle }}" />
+<meta name="twitter:image" content="{{ socialImage }}" />
 
-<meta property="og:image"  content="{{ app.request.schemeAndHttpHost }}/{{ imgPath }}/{{ galleryItem.gallery }}/{{ galleryItem.image }}" />
+<meta property="og:title"  content="{{ socialTitle }}" />
+<meta property="og:image"  content="{{ socialImage }}" />
 {% endblock %}
-
-
 
 {% block body %}
 
