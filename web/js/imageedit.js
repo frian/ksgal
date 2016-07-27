@@ -1,7 +1,7 @@
 $(function() {
 
 	console.log('loaded imageedit');
-	
+
 	if(window.location.href.indexOf("edit") > -1) {
 
 		// hide image upload
@@ -9,15 +9,15 @@ $(function() {
 
 		// hide bgimage upload
 		$("#gallery_item_bgimage").css("display", "none");
-		
+
 		// add modify image button
 		var addImageButton = $('<input type="button" id="imageButton" value="modifier l\'image"/>');
-		
+
 		$("#image").append(addImageButton);
-		
+
 		// add modify bgimage button
 		var addBgimageButton = $('<input type="button" id="bgimageButton" value="modifier l\'image de fond"/>');
-		
+
 		$("#bgimage").append(addBgimageButton);
 
 		// show image upload on modify image
@@ -31,7 +31,6 @@ $(function() {
 	    });
 
 	}
-
 
 
     // get image size
@@ -57,7 +56,42 @@ $(function() {
 	};
 	bgimage.src = $("#image-bg").attr("src");
 
+
+	function readURL(input, imageFile) {
+
+	    if (input.files && input.files[0]) {
+	        var reader = new FileReader();
+
+	        reader.onload = function (e) {
+	            $('#' + imageFile).attr('src', e.target.result);
+	        };
+
+	        reader.readAsDataURL(input.files[0]);
+
+		    setTimeout(function() {
+
+			    // get image size
+				var image = new Image(); // or document.createElement('img')
+				var width, height;
+				image.onload = function() {
+				  width = this.width;
+				  height = this.height;
+				  $("#" + imageFile + "-size").html("size : " + width + "x" + height + "px");
+				  console.log("1 " + width + " x " + height);
+				};
+
+				image.src = $("#" + imageFile).attr("src");
+		    }, 500);
+	    }
+	}
+
+
+	$("#gallery_item_image").change(function(){
+	    readURL(this, "image-full");
+	});
+
+	$("#gallery_item_bgimage").change(function(){
+	    readURL(this, "image-bg");
+	});
+
 });
-
-
-
