@@ -9,40 +9,47 @@
     <span class="serie">{{ name }}</span>
 </header>
 
-<div class="index">
-	{% for item in galleryItems %}
+<div class="stickyWrapper">
+    <div class="index">
+    	{% for item in galleryItems %}
 
-		{% if loop.index0 is even %}
-		<div class="clearfix">
-		{% endif %}
+    		{% if loop.index0 is even %}
+    		<div class="clearfix">
+    		{% endif %}
 
 
-	<div class="galleryIndexWrapper">
+    	<div class="galleryIndexWrapper">
 
-    	<div class="indexTitle">
-    		{{ item.name }}
+        	<div class="indexTitle">
+        		{{ item.name }}
+        	</div>
+        	<div class="text-center">
+        		<a href="/galleryitem/{{ item.gallery }}/{{ loop.index }}">
+    	    		<img class="preview" src="/{{ imgPath }}/{{ name }}/{{ item.image }}">
+    	    	</a>
+        	</div>
+        	<div class="text-center">
+        		<span class="details">{{ item.dimensions }}</span>
+
+        		<span class="details">{{ item.techniques }}</span>
+        	</div>
+
     	</div>
-    	<div class="text-center">
-    		<a href="/galleryitem/{{ item.gallery }}/{{ loop.index }}">
-	    		<img class="preview" src="/{{ imgPath }}/{{ name }}/{{ item.image }}">
-	    	</a>
-    	</div>
-    	<div class="text-center">
-    		<span class="details">{{ item.dimensions }}</span>
-
-    		<span class="details">{{ item.techniques }}</span>
-    	</div>
-
-	</div>
 
 
-		{% if loop.index0 is odd %}
-		</div>
-		{% endif %}
+    		{% if loop.index0 is odd or loop.last %}
+    		</div>
+    		{% endif %}
 
 
 
-	{% endfor %}
+    	{% endfor %}
+    </div>
+    <div class="push"></div>
 </div>
+
+<footer class="footer">
+	{{ include('default/_social.html.twig') }}
+</footer>
 
 {% endblock %}
