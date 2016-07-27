@@ -68,6 +68,23 @@ $(function() {
             }
         }
     });
+
+
+    $( "span > a" ).one("mouseenter", function() {
+        $( "a > span" ).css('display' , 'block');
+        $( "a > span" ).delay(1000).animate({opacity: 0}, 1000, function() {
+            // Animation complete
+            $( "a > span" ).css('display' , 'none');
+            $( "a > span" ).css('opacity' , 1);
+            showTooltip = 'no';
+            console.log(showTooltip);
+        });
+    });
+
+    $( "span > a" ).one("mouseleave", function() {
+        $( "a > span" ).finish();
+        $( "a > span" ).css('display' , 'none');
+    });
 });
 
 /**

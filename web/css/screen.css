@@ -162,6 +162,27 @@ a.social.button:hover, a.social:focus {
   color: #ff0099;
 }
 
+/* line 55, ../sass/_global.scss */
+a span {
+  display: none;
+  opacity: 1;
+}
+
+/* line 60, ../sass/_global.scss */
+a:hover span {
+  padding: 10px;
+  display: block;
+  z-index: 100;
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  text-decoration: none;
+  background-color: #990066;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
 /* line 4, ../sass/_index.scss */
 .indexContainer, #login {
   position: relative;
