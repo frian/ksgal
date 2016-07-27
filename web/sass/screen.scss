@@ -21,7 +21,7 @@ $bg-color : #111;
  * -- HEADER --
 */
 header {
-	position : relative;
+	position : absolute;;
 	top : 0;
 	left : 0;
 	width : 100%;
@@ -104,11 +104,9 @@ table tbody, table tfoot, table thead, table tbody tr:nth-child(2n) {
 #imageWrapper {
 	color : black;
 	position : relative;
-	top : 20px;
 	margin : auto;
 	width : 240px;
 	z-index : 30;
-	padding-bottom : 10px;
 }
 
 #bg {
