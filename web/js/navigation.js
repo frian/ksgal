@@ -70,20 +70,23 @@ $(function() {
     });
 
 
-    $( "span > a" ).one("mouseenter", function() {
-        $( "a > span" ).css('display' , 'block');
-        $( "a > span" ).delay(1000).animate({opacity: 0}, 1000, function() {
+    $( "a.tip" ).one("mouseenter", function() {
+
+        var span = $(this).find("span");
+        span.css('display' , 'block');
+
+        span.delay(1000).animate({opacity: 0}, 1000, function() {
             // Animation complete
-            $( "a > span" ).css('display' , 'none');
-            $( "a > span" ).css('opacity' , 1);
-            showTooltip = 'no';
-            console.log(showTooltip);
+            span.css('display' , 'none');
+            span.css('opacity' , 1);
         });
     });
 
-    $( "span > a" ).one("mouseleave", function() {
-        $( "a > span" ).finish();
-        $( "a > span" ).css('display' , 'none');
+    $( "a.tip" ).one("mouseleave", function() {
+
+        var span = $(this).find("span");
+        span.finish();
+        span.css('display' , 'none');
     });
 });
 

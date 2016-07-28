@@ -24,7 +24,7 @@
 
 <header>
 	<span class="navigation">
-    	<a href="{{ path('gallery_show_content', {'name': galleryItem.gallery}) }}">&lt;</a>
+    	<a class="tip" href="{{ path('gallery_show_content', {'name': galleryItem.gallery}) }}">&lt;<span class="tip">back : keyboard b</span></a>
     </span>
 	<span class="serie show-for-medium">{{ galleryItem.gallery }}</span><span class="name">{{ galleryItem.name }}</span>
 </header>
