@@ -20,6 +20,11 @@
 
     {{ form_start(edit_form) }}
 
+    <div>
+        {{ form_label(edit_form.gallery) }}
+        {{ form_errors(edit_form.gallery) }}
+        {{ form_widget(edit_form.gallery) }}
+	</div>
 	<div>
         {{ form_label(edit_form.name) }}
         {{ form_errors(edit_form.name) }}
@@ -62,7 +67,6 @@
 	</div>
 
 	<div>
-        {{ form_widget(edit_form) }}
         <input class="button expanded" type="submit" value="Edit" />
         {{ form_end(edit_form) }}
 	</div>
