@@ -70,24 +70,24 @@ $(function() {
     });
 
 
-    $( "a.tip" ).one("mouseenter", function() {
-
-        var span = $(this).find("span");
-        span.css('display' , 'block');
-
-        span.delay(1000).animate({opacity: 0}, 1000, function() {
-            // Animation complete
-            span.css('display' , 'none');
-            span.css('opacity' , 1);
-        });
-    });
-
-    $( "a.tip" ).one("mouseleave", function() {
-
-        var span = $(this).find("span");
-        span.finish();
-        span.css('display' , 'none');
-    });
+    // $( "a.tip" ).one("mouseenter", function() {
+    //
+    //     var span = $(this).find("span");
+    //     span.css('display' , 'block');
+    //
+    //     span.delay(1000).animate({opacity: 0}, 1000, function() {
+    //         // Animation complete
+    //         span.css('display' , 'none');
+    //         span.css('opacity' , 1);
+    //     });
+    // });
+    //
+    // $( "a.tip" ).one("mouseleave", function() {
+    //
+    //     var span = $(this).find("span");
+    //     span.finish();
+    //     span.css('display' , 'none');
+    // });
 });
 
 /**
