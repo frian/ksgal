@@ -2,24 +2,24 @@
 
 {% block body %}
 <!-- <div class="stickyWrapper"> -->
-    <header>
-    	<span class="serie">Gallery list</span>
-    </header>
-    <div class="push"></div>
-    <div class="index">
+<header>
+	<span class="serie">Gallery list</span>
+</header>
 
-        {% for gallery in galleries %}
+<div class="push"></div>
 
-        	<div id="{{ gallery.name }}"  class="indexTitle">
-    	        {{ gallery.name }}
-    			<div class="indexDescription">
-    	            {{ gallery.description }}
-    			</div>
-    		</div>
-        {% endfor %}
+<div class="index">
 
-    </div>
-	<div class="push"></div>
+    {% for gallery in galleries %}
+
+    	<div id="{{ gallery.name }}"  class="indexTitle">
+	        {{ gallery.name }}
+			<div class="indexDescription">
+	            {{ gallery.description }}
+			</div>
+		</div>
+    {% endfor %}
+
 </div>
 
 <!-- <footer class="footer">

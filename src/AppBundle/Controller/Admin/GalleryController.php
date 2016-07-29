@@ -30,10 +30,10 @@ class GalleryController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-        	
+
             // get path to gallery
         	$pathToGallery = $this->container->getParameter('images_directory').'/'.$gallery->getName();
-        	
+
         	// create gallery if not existing
         	if (!file_exists($pathToGallery)) {
         		mkdir($pathToGallery, 0755, true);
@@ -140,13 +140,13 @@ class GalleryController extends Controller
      */
     public function showGalleryAction($name)
     {
-    
+
     	$gallery = $this->getDoctrine()
     	->getRepository('AppBundle:Gallery')
     	->findOneByName($name);
-    	 
+
     	$galleryItems = $gallery->getGalleryItems();
-    
+
     	return $this->render('admin/gallery/showContent.html.twig', array(
     		'name' => $name,
     		'galleryItems' => $galleryItems

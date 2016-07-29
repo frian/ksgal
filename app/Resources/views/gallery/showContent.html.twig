@@ -19,13 +19,15 @@
 {% block body %}
 
 <div class="stickyWrapper">
-    <div class="push"></div>
+
     <header>
         <span class="navigation">
         	<a class="tip" href="{{ path('gallery_index') }}">&lt;<span class="tip">back : keyboard b</span></a>
         </span>
         <span class="serie">{{ name }}</span>
     </header>
+
+    <div class="push"></div>
 
     <div class="index">
     	{% for item in galleryItems %}
@@ -37,9 +39,9 @@
 
     	<div class="galleryIndexWrapper">
 
-        	<div class="indexTitle">
+        	<a class="itemTitle" href="/galleryitem/{{ item.gallery }}/{{ loop.index }}">
         		{{ item.name }}
-        	</div>
+        	</a>
         	<div class="text-center">
         		<a href="/galleryitem/{{ item.gallery }}/{{ loop.index }}">
     	    		<img class="preview" src="/{{ imgPath }}/{{ name }}/{{ item.image }}">

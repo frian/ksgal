@@ -48,13 +48,13 @@ class GalleryItemController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-        	
-        	
+
+
         	$pathToGallery = $this->container->getParameter('images_directory').'/'.$galleryItem->getGallery();
-        	
+
         	// get main image
         	$image = $galleryItem->getImage();
-        	
+
         	// Move and rename
         	$image->move(
         		$pathToGallery,
@@ -63,18 +63,18 @@ class GalleryItemController extends Controller
 
         	// set image name
         	$galleryItem->setImage($image->getClientOriginalName());
-        	
 
-        	
+
+
         	// get main image
         	$bgImage = $galleryItem->getBgimage();
-        	 
+
         	// Move and rename
         	$bgImage->move(
         			$pathToGallery,
         			$bgImage->getClientOriginalName()
         			);
-        	
+
         	// set image name
         	$galleryItem->setBgimage($bgImage->getClientOriginalName());
 
@@ -83,7 +83,7 @@ class GalleryItemController extends Controller
             $em->persist($galleryItem);
             $em->flush();
 
-            return $this->redirectToRoute('gallery_admin_show_content', 
+            return $this->redirectToRoute('gallery_admin_show_content',
             	array(
             		'name' => $galleryItem->getGallery(),
             	));
@@ -104,18 +104,18 @@ class GalleryItemController extends Controller
     public function editAction(Request $request, GalleryItem $galleryItem)
     {
         $deleteForm = $this->createDeleteForm($galleryItem);
-        
+
 		// save current images ( needed if the images do not change )
         $currentImage = $galleryItem->getImage();
         $currentBgimage = $galleryItem->getBgimage();
-        
+
         $editForm = $this->createForm('AppBundle\Form\GalleryItemType', $galleryItem);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-        	
+
         	$pathToGallery = $this->container->getParameter('images_directory').'/'.$galleryItem->getGallery();
-        	
+
 			// if images has not changed set old image
        		if ( $galleryItem->getImage() == null ) {
         		$galleryItem->setImage($currentImage);
@@ -123,41 +123,41 @@ class GalleryItemController extends Controller
         	else {
         		// get main image
         		$image = $galleryItem->getImage();
-        		
+
         		// Move and rename
         		$image->move(
         				$pathToGallery,
         				$image->getClientOriginalName()
         				);
-        		 
+
         		// set image name
-        		$galleryItem->setImage($image->getClientOriginalName());        		
+        		$galleryItem->setImage($image->getClientOriginalName());
         	}
-        	
+
         	if ( $galleryItem->getBgimage() == null ) {
         		$galleryItem->setBgimage($currentBgimage);
         	}
         	else {
         		// get main image
         		$bgImage = $galleryItem->getBgimage();
-        		 
+
         		// Move and rename
         		$bgImage->move(
         				$pathToGallery,
         				$bgImage->getClientOriginalName()
         				);
-        		
+
         		// set image name
-        		$galleryItem->setBgimage($bgImage->getClientOriginalName());        		
+        		$galleryItem->setBgimage($bgImage->getClientOriginalName());
         	}
 
-			
+
         	// persist
             $em = $this->getDoctrine()->getManager();
             $em->persist($galleryItem);
             $em->flush();
 
-            return $this->redirectToRoute('galleryitem_edit', array('id' => $galleryItem->getId()));
+            return $this->redirectToRoute('gallery_admin_show_content', array('name' => $galleryItem->getGallery()));
         }
 
         return $this->render('admin/galleryitem/edit.html.twig', array(

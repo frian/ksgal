@@ -10,13 +10,15 @@
     {{ include('admin/default/_logout.html.twig') }}
 </header>
 
+<div class="push"></div>
+
 <div class="index">
 	{% for item in galleryItems %}
 
 	<div class="galleryIndexWrapper">
-    	<div class="indexTitle">
+    	<a class="itemTitle" href="/galleryitem/{{ item.gallery }}/{{ loop.index }}">
     		{{ item.name }}
-    	</div>
+    	</a>
     	<div class="text-center">
     		<a href="/admin/galleryitem/{{ item.id }}/edit">
 	    		<img class="preview" src="/{{ imgPath }}/{{ name }}/{{ item.image }}">

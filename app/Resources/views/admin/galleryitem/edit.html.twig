@@ -14,6 +14,8 @@
 	{{ include('admin/default/_logout.html.twig') }}
 </header>
 
+<div class="push"></div>
+
 <div class="index">
 
     {{ form_start(edit_form) }}
@@ -66,7 +68,7 @@
 	</div>
 
 	<div>
-		<a class="myButton" href="{{ path('galleryitem_index') }}">Back to the list</a>
+		<a class="myButton" href="{{ path('gallery_admin_show_content', { 'name': edit_form.vars.value.gallery }) }}">Back to the gallery</a>
 	</div>
 
 	<div>
