@@ -261,6 +261,27 @@ a:hover span {
   z-index: 20;
 }
 
+/* line 77, ../sass/_index.scss */
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 80px;
+  line-height: 80px;
+  margin-top: -40px;
+  margin-left: -150px;
+  font-family: 'Bilbo', cursive;
+  font-size: 60px;
+  background-color: #906;
+  border: 1px solid #666;
+  z-index: 20;
+  -moz-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+}
+
 /*
  * -- labels --
 */
