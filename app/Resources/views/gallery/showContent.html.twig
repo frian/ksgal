@@ -2,20 +2,13 @@
 
 {% block my_tags %}
 
-{% set randomItem = random(galleryItems|length -1)  %}
-
 {% if galleryItems is not empty %}
 
-    {% set socialImage = app.request.schemeAndHttpHost ~ '/' ~ imgPath ~ '/' ~ galleryItems[randomItem].gallery ~ '/' ~ galleryItems[randomItem].image %}
-    {% set socialTitle = galleryItems[randomItem].gallery ~ '/' ~ galleryItems[randomItem].name %}
+    {% set randomItem = random(galleryItems|length -1)  %}
 
-    <meta name="twitter:card"  content="photo" />
-    <meta name="twitter:site"  content="@upchchsupport" />
-    <meta name="twitter:title" content="{{ socialTitle }}" />
-    <meta name="twitter:image" content="{{ socialImage }}" />
+    {% set item = galleryItems[randomItem] %}
 
-    <meta property="og:title"  content="{{ socialTitle }}" />
-    <meta property="og:image"  content="{{ socialImage }}" />
+    {{ include('default/_socialTags.html.twig') }}
 
 {% endif %}
 

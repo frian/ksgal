@@ -1,0 +1,42 @@
+
+
+{% set twitterImage =
+    app.request.schemeAndHttpHost ~
+    '/' ~ imgPath ~ '/' ~ item.gallery ~
+    '/' ~ item.image
+%}
+
+{% set facebookImage =
+    app.request.schemeAndHttpHost ~
+    '/' ~ imgPath ~ '/' ~ item.gallery ~
+    '/' ~ item.bgImage
+%}
+
+{% set socialTitle = item.gallery ~ '/' ~ item.name %}
+
+<meta name="twitter:card"  content="summary_large_image" />
+<meta name="twitter:site"  content="@_kasgal_" />
+<meta name="twitter:title" content="{{ socialTitle }}" />
+<meta name="twitter:image" content="{{ twitterImage|replace({ ' ' : '%20'}) }}" />
+
+<meta property="og:type"   content="website" />
+<meta property="og:url"    content="{{ app.request.schemeAndHttpHost ~ app.request.requestUri }}" />
+<meta property="og:title"  content="{{ socialTitle }}" />
+<meta property="og:image"  content="{{ facebookImage|replace({ ' ' : '%20'}) }}" />
+<meta property="og:image:width" content="400" id="ogwidth" />
+<meta property="og:image:height" content="400" id="ogheight" />
+
+<script>
+    // get bg image size
+    var bgimage = new Image(); // or document.createElement('img')
+    var bgwidth, bgheight;
+    bgimage.onload = function() {
+        bgwidth = this.width;
+        bgheight = this.height;
+        //   $("#bgimageSize").html("size : " + bgwidth + "x" + bgheight + "px");
+        document.getElementById("ogwidth").setAttribute("content", bgwidth);
+        document.getElementById("ogheight").setAttribute("content", bgheight);
+        console.log("2 " + bgwidth + " x " + bgheight);
+    };
+    bgimage.src = "{{ '/' ~ imgPath ~ '/' ~ item.gallery ~ '/' ~ item.bgImage }}";
+</script>
