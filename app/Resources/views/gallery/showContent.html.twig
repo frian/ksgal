@@ -4,16 +4,21 @@
 
 {% set randomItem = random(galleryItems|length -1)  %}
 
-{% set socialImage = app.request.schemeAndHttpHost ~ '/' ~ imgPath ~ '/' ~ galleryItems[randomItem].gallery ~ '/' ~ galleryItems[randomItem].image %}
-{% set socialTitle = galleryItems[randomItem].gallery ~ '/' ~ galleryItems[randomItem].name %}
+{% if galleryItems is not empty %}
 
-<meta name="twitter:card"  content="photo" />
-<meta name="twitter:site"  content="@upchchsupport" />
-<meta name="twitter:title" content="{{ socialTitle }}" />
-<meta name="twitter:image" content="{{ socialImage }}" />
+    {% set socialImage = app.request.schemeAndHttpHost ~ '/' ~ imgPath ~ '/' ~ galleryItems[randomItem].gallery ~ '/' ~ galleryItems[randomItem].image %}
+    {% set socialTitle = galleryItems[randomItem].gallery ~ '/' ~ galleryItems[randomItem].name %}
 
-<meta property="og:title"  content="{{ socialTitle }}" />
-<meta property="og:image"  content="{{ socialImage }}" />
+    <meta name="twitter:card"  content="photo" />
+    <meta name="twitter:site"  content="@upchchsupport" />
+    <meta name="twitter:title" content="{{ socialTitle }}" />
+    <meta name="twitter:image" content="{{ socialImage }}" />
+
+    <meta property="og:title"  content="{{ socialTitle }}" />
+    <meta property="og:image"  content="{{ socialImage }}" />
+
+{% endif %}
+
 {% endblock %}
 
 {% block body %}
