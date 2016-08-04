@@ -1,5 +1,4 @@
 
-
 {% set twitterImage =
     app.request.schemeAndHttpHost ~
     '/' ~ imgPath ~ '/' ~ item.gallery ~
@@ -18,6 +17,7 @@
 <meta name="twitter:site"  content="@_kasgal_" />
 <meta name="twitter:title" content="{{ socialTitle }}" />
 <meta name="twitter:image" content="{{ twitterImage|replace({ ' ' : '%20'}) }}" />
+<meta name="twitter:description" content="{{ description }}" />
 
 <meta property="og:type"   content="website" />
 <meta property="og:url"    content="{{ app.request.schemeAndHttpHost ~ app.request.requestUri }}" />
@@ -39,4 +39,6 @@
         console.log("2 " + bgwidth + " x " + bgheight);
     };
     bgimage.src = "{{ '/' ~ imgPath ~ '/' ~ item.gallery ~ '/' ~ item.bgImage }}";
+
+
 </script>

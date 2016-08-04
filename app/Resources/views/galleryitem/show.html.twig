@@ -8,6 +8,8 @@
 
     {% set item = galleryItem %}
 
+    {% set description = 'painting ' ~ galleryItem.name ~ ' in gallery ' ~ galleryItem.gallery %}
+
     {{ include('default/_socialTags.html.twig') }}
 
 {% endblock %}

@@ -8,6 +8,8 @@
 
     {% set item = galleryItems[randomItem] %}
 
+    {% set description = 'gallery ' ~ item.gallery %}
+
     {{ include('default/_socialTags.html.twig') }}
 
 {% endif %}
