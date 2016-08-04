@@ -155,19 +155,21 @@ i {
   position: relative;
   display: block;
   font-size: 30px;
+  top: 2px;
+  left: -6px;
 }
 
-/* line 49, ../sass/_global.scss */
+/* line 51, ../sass/_global.scss */
 i:hover {
   color: #ff0099;
 }
 
-/* line 53, ../sass/_global.scss */
+/* line 55, ../sass/_global.scss */
 a.social.button:hover, a.social:focus {
   color: #ff0099;
 }
 
-/* line 57, ../sass/_global.scss */
+/* line 59, ../sass/_global.scss */
 .error {
   color: #f09;
   font-family: 'Lato', sans-serif;
@@ -175,13 +177,13 @@ a.social.button:hover, a.social:focus {
   padding: 10px 0;
 }
 
-/* line 64, ../sass/_global.scss */
+/* line 66, ../sass/_global.scss */
 a span {
   display: none;
   opacity: 1;
 }
 
-/* line 69, ../sass/_global.scss */
+/* line 71, ../sass/_global.scss */
 a:hover span {
   padding: 10px;
   z-index: 100;
