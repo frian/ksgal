@@ -11,14 +11,16 @@ class DefaultController extends Controller
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction(Request $request)
-    {
+    public function indexAction(Request $request) {
 
     	$em = $this->getDoctrine()->getManager();
 
     	// get the gallery
     	$galleryItems = $em->getRepository('AppBundle:GalleryItem')->findAll();
 
+        /*
+        *  get random image
+        */
     	$numItems = count($galleryItems);
 
     	$currentItemOffset = rand(0, $numItems-1);
@@ -29,8 +31,13 @@ class DefaultController extends Controller
     		$currentItem = $galleryItems[$currentItemOffset];
     	}
 
-    	
-
         return $this->render('default/index.html.twig', array( 'galleryItem' => $currentItem ));
+    }
+
+    /**
+     * @Route("/about", name="about")
+     */
+    public function aboutAction(Request $request) {
+        return $this->render('default/about.html.twig');
     }
 }

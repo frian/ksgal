@@ -68,6 +68,17 @@ span.navigation a {
 	color : #ddd;
 }
 
+div.about {
+    float: right;
+}
+
+div.about a {
+    display: block;
+    padding: 0 20px;
+    font-weight: 300;
+    font-family: 'Lato', sans-serif;
+    font-size: 130%;
+}
 
 /*
  * -- FOOTER --
@@ -197,6 +208,18 @@ span.details {
 	width : 100%;
 	font-family : helvetica;
 	padding : 5px 0;
+}
+
+/*
+ * -- ABOUT --
+*/
+p {
+    padding : 40px 40px 0 40px;
+	font-size : 120%;
+	font-family: 'Muli', sans-serif;
+	font-weight : 300;
+	line-height : 130%;
+    // text-align: justify;
 }
 
 
