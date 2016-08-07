@@ -173,17 +173,18 @@ a.social.button:hover, a.social:focus {
 .error {
   color: #f09;
   font-family: 'Lato', sans-serif;
-  font-size: 200%;
+  font-size: 120%;
   padding: 10px 0;
+  text-align: center;
 }
 
-/* line 66, ../sass/_global.scss */
+/* line 67, ../sass/_global.scss */
 a span {
   display: none;
   opacity: 1;
 }
 
-/* line 71, ../sass/_global.scss */
+/* line 72, ../sass/_global.scss */
 a:hover span {
   padding: 10px;
   z-index: 100;
@@ -319,7 +320,10 @@ label {
  * -- text, password and select inputs --
 */
 /* line 21, ../sass/_forms.scss */
-input[type="text"], input[type="text"]:focus, input[type="password"], input[type="password"]:focus, select {
+input[type="text"], input[type="text"]:focus,
+input[type="email"], input[type="email"]:focus,
+input[type="password"], input[type="password"]:focus,
+select {
   color: white;
   height: 40px;
   line-height: 40px;
@@ -331,7 +335,7 @@ input[type="text"], input[type="text"]:focus, input[type="password"], input[type
 /*
  * -- file input --
 */
-/* line 35, ../sass/_forms.scss */
+/* line 38, ../sass/_forms.scss */
 input[type="file"] {
   font-family: helvetica;
 }
@@ -339,7 +343,7 @@ input[type="file"] {
 /*
  * -- button and submit --
 */
-/* line 43, ../sass/_forms.scss */
+/* line 46, ../sass/_forms.scss */
 input[type="button"], input[type="submit"], .myButton {
   font-family: helvetica;
   color: #ccc;
@@ -354,13 +358,13 @@ input[type="button"], input[type="submit"], .myButton {
   width: 100%;
 }
 
-/* line 58, ../sass/_forms.scss */
+/* line 61, ../sass/_forms.scss */
 input[type="button"]:hover, input[type="submit"]:hover, .myButton:hover {
   color: #eee;
   background-color: #222;
 }
 
-/* line 63, ../sass/_forms.scss */
+/* line 66, ../sass/_forms.scss */
 input[type="button"]:focus, input[type="submit"]:focus, .myButton:focus {
   color: #eee;
   background-color: #222;
@@ -369,12 +373,12 @@ input[type="button"]:focus, input[type="submit"]:focus, .myButton:focus {
 /*
  * -- misc --
 */
-/* line 72, ../sass/_forms.scss */
+/* line 75, ../sass/_forms.scss */
 option {
   padding: 10px;
 }
 
-/* line 76, ../sass/_forms.scss */
+/* line 79, ../sass/_forms.scss */
 textarea, textarea:focus {
   font-family: helvetica;
   color: white;
@@ -383,7 +387,7 @@ textarea, textarea:focus {
   border: 1px solid #555;
 }
 
-/* line 84, ../sass/_forms.scss */
+/* line 87, ../sass/_forms.scss */
 .delete:hover {
   background-color: #a00 !important;
 }

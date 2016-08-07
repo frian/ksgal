@@ -18,7 +18,10 @@ label {
 /*
  * -- text, password and select inputs --
 */
-input[type="text"], input[type="text"]:focus, input[type="password"], input[type="password"]:focus, select {
+input[type="text"], input[type="text"]:focus,
+input[type="email"], input[type="email"]:focus,
+input[type="password"], input[type="password"]:focus,
+select {
 	color : white;
 	height : 40px;
 	line-height : 40px;
