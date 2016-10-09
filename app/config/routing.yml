@@ -10,11 +10,6 @@ app_gallery:
     resource: "@AppBundle/Controller/GalleryController.php"
     type:     annotation
 
-kgal:
-    resource: "@KgalBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
