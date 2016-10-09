@@ -36,7 +36,9 @@
 </div>
 
 <footer>
+    {% if not galleryItem.dimensions is empty and not galleryItem.techniques is empty %}
 	<span class="show-for-medium">{{ galleryItem.dimensions }} / {{ galleryItem.techniques }}</span>
+    {% endif %}
 	<div class="socialButtons">
 	    {{ include('default/_social.html.twig') }}
 	</div>
